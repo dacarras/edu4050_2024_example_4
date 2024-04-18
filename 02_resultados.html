@@ -605,62 +605,62 @@ padding-top: 0px;
 <p>dacarras Abril 18, 2024</p>
 <h1 id="cargar-datos">Cargar datos</h1>
 <h2 id="cargar-datos-desde-archivo">Cargar datos desde archivo</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#--------------------------------------------------------------------</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># load data</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">#--------------------------------------------------------------------</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">#------------------------------------------------</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># load main library</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co">#------------------------------------------------</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co">#------------------------------------------------</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co"># load data from file</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co">#------------------------------------------------</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>data_civ <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">&#39;data_civ.rds&#39;</span>) <span class="co"># pooled</span></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>data_exp <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">&#39;data_exp.rds&#39;</span>) <span class="co"># exploratory</span></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>data_con <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">&#39;data_con.rds&#39;</span>) <span class="co"># confirmatory</span></span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="co">#--------------------------------------------------------------------</span></span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="co"># load data</span></span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a><span class="co">#--------------------------------------------------------------------</span></span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a><span class="co">#------------------------------------------------</span></span>
+<span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a><span class="co"># load main library</span></span>
+<span id="cb1-7"><a href="#cb1-7" tabindex="-1"></a><span class="co">#------------------------------------------------</span></span>
+<span id="cb1-8"><a href="#cb1-8" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb1-10"><a href="#cb1-10" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" tabindex="-1"></a><span class="co">#------------------------------------------------</span></span>
+<span id="cb1-12"><a href="#cb1-12" tabindex="-1"></a><span class="co"># load data from file</span></span>
+<span id="cb1-13"><a href="#cb1-13" tabindex="-1"></a><span class="co">#------------------------------------------------</span></span>
+<span id="cb1-14"><a href="#cb1-14" tabindex="-1"></a></span>
+<span id="cb1-15"><a href="#cb1-15" tabindex="-1"></a>data_civ <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">&#39;data_civ.rds&#39;</span>) <span class="co"># pooled</span></span>
+<span id="cb1-16"><a href="#cb1-16" tabindex="-1"></a>data_exp <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">&#39;data_exp.rds&#39;</span>) <span class="co"># exploratory</span></span>
+<span id="cb1-17"><a href="#cb1-17" tabindex="-1"></a>data_con <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">&#39;data_con.rds&#39;</span>) <span class="co"># confirmatory</span></span></code></pre></div>
 <h1 id="descriptivos">Descriptivos</h1>
 <h2 id="items">Items</h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#--------------------------------------------------------------------</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># item</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co">#--------------------------------------------------------------------</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co">#------------------------------------------------</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co"># item info</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co">#------------------------------------------------</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>items_table <span class="ot">&lt;-</span> <span class="fu">read.table</span>(</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="at">text=</span><span class="st">&quot;</span></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="st">var_name  variable item_text</span></span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="st">IS3G23A   n01      &#39;Voting in every national election&#39;</span></span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="st">IS3G23B   n02      &#39;Joining a political party&#39;</span></span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="st">IS3G23C   n03      &#39;Learning about the country history&#39;</span></span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="st">IS3G23D   n04      &#39;Following political issues in the newspaper, on theradio, on TV or on the Internet&#39;</span></span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="st">IS3G23E   n05      &#39;Showing respect for government representatives&#39;</span></span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="st">IS3G23F   n06      &#39;Engaging in political discussions&#39;</span></span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="st">IS3G23G   n07      &#39;Participating in peaceful protests against laws believed to be unjust&#39;</span></span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="st">IS3G23H   n08      &#39;Participating in activities to benefit people in the &lt;local community&gt;&#39;</span></span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="st">IS3G23I   n09      &#39;Taking part in activities promoting human rights&#39;</span></span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a><span class="st">IS3G23J   n10      &#39;Taking part in activities to protect the environment&#39;</span></span>
-<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a><span class="st">IS3G23K   n11      &#39;Working hard&#39;</span></span>
-<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a><span class="st">IS3G23L   n12      &#39;Always obeying the law&#39;</span></span>
-<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a><span class="st">IS3G22A   td1      &#39;[R] Political leaders give government jobs to their family members.&#39;</span></span>
-<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a><span class="st">IS3G22B   td2      &#39;[R] One company or the government owns all newspapers in a country.&#39;</span></span>
-<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a><span class="st">IS3G22C   td3      &#39;People are allowed to publicly criticize the government.&#39;</span></span>
-<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a><span class="st">IS3G22D   td4      &#39;All adult citizens have the right to elect their political leaders.&#39;</span></span>
-<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a><span class="st">IS3G22E   td5      &#39;People are able to protest if they think a law is unfair.&#39;</span></span>
-<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a><span class="st">IS3G22F   td6      &#39;[R] The police have the right to hold people suspected of threatening national security in jail without trial.&#39;</span></span>
-<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a><span class="st">IS3G22G   td7      &#39;Differences in income between poor and rich people are small.&#39;</span></span>
-<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a><span class="st">IS3G22H   td8      &#39;[R] The government influences decisions by courts of justice.&#39;</span></span>
-<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a><span class="st">IS3G22I   td9      &#39;All &lt;ethnic/racial&gt; groups in the country have the same rights.&#39;</span></span>
-<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;</span>,</span>
-<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a><span class="at">header=</span><span class="cn">TRUE</span>, <span class="at">stringsAsFactors =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a><span class="co"># display item table</span></span>
-<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(items_table)</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="co">#--------------------------------------------------------------------</span></span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="co"># item</span></span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a><span class="co">#--------------------------------------------------------------------</span></span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a><span class="co">#------------------------------------------------</span></span>
+<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a><span class="co"># item info</span></span>
+<span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a><span class="co">#------------------------------------------------</span></span>
+<span id="cb2-8"><a href="#cb2-8" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="#cb2-9" tabindex="-1"></a>items_table <span class="ot">&lt;-</span> <span class="fu">read.table</span>(</span>
+<span id="cb2-10"><a href="#cb2-10" tabindex="-1"></a><span class="at">text=</span><span class="st">&quot;</span></span>
+<span id="cb2-11"><a href="#cb2-11" tabindex="-1"></a><span class="st">var_name  variable item_text</span></span>
+<span id="cb2-12"><a href="#cb2-12" tabindex="-1"></a><span class="st">IS3G23A   n01      &#39;Voting in every national election&#39;</span></span>
+<span id="cb2-13"><a href="#cb2-13" tabindex="-1"></a><span class="st">IS3G23B   n02      &#39;Joining a political party&#39;</span></span>
+<span id="cb2-14"><a href="#cb2-14" tabindex="-1"></a><span class="st">IS3G23C   n03      &#39;Learning about the country history&#39;</span></span>
+<span id="cb2-15"><a href="#cb2-15" tabindex="-1"></a><span class="st">IS3G23D   n04      &#39;Following political issues in the newspaper, on theradio, on TV or on the Internet&#39;</span></span>
+<span id="cb2-16"><a href="#cb2-16" tabindex="-1"></a><span class="st">IS3G23E   n05      &#39;Showing respect for government representatives&#39;</span></span>
+<span id="cb2-17"><a href="#cb2-17" tabindex="-1"></a><span class="st">IS3G23F   n06      &#39;Engaging in political discussions&#39;</span></span>
+<span id="cb2-18"><a href="#cb2-18" tabindex="-1"></a><span class="st">IS3G23G   n07      &#39;Participating in peaceful protests against laws believed to be unjust&#39;</span></span>
+<span id="cb2-19"><a href="#cb2-19" tabindex="-1"></a><span class="st">IS3G23H   n08      &#39;Participating in activities to benefit people in the &lt;local community&gt;&#39;</span></span>
+<span id="cb2-20"><a href="#cb2-20" tabindex="-1"></a><span class="st">IS3G23I   n09      &#39;Taking part in activities promoting human rights&#39;</span></span>
+<span id="cb2-21"><a href="#cb2-21" tabindex="-1"></a><span class="st">IS3G23J   n10      &#39;Taking part in activities to protect the environment&#39;</span></span>
+<span id="cb2-22"><a href="#cb2-22" tabindex="-1"></a><span class="st">IS3G23K   n11      &#39;Working hard&#39;</span></span>
+<span id="cb2-23"><a href="#cb2-23" tabindex="-1"></a><span class="st">IS3G23L   n12      &#39;Always obeying the law&#39;</span></span>
+<span id="cb2-24"><a href="#cb2-24" tabindex="-1"></a><span class="st">IS3G22A   td1      &#39;[R] Political leaders give government jobs to their family members.&#39;</span></span>
+<span id="cb2-25"><a href="#cb2-25" tabindex="-1"></a><span class="st">IS3G22B   td2      &#39;[R] One company or the government owns all newspapers in a country.&#39;</span></span>
+<span id="cb2-26"><a href="#cb2-26" tabindex="-1"></a><span class="st">IS3G22C   td3      &#39;People are allowed to publicly criticize the government.&#39;</span></span>
+<span id="cb2-27"><a href="#cb2-27" tabindex="-1"></a><span class="st">IS3G22D   td4      &#39;All adult citizens have the right to elect their political leaders.&#39;</span></span>
+<span id="cb2-28"><a href="#cb2-28" tabindex="-1"></a><span class="st">IS3G22E   td5      &#39;People are able to protest if they think a law is unfair.&#39;</span></span>
+<span id="cb2-29"><a href="#cb2-29" tabindex="-1"></a><span class="st">IS3G22F   td6      &#39;[R] The police have the right to hold people suspected of threatening national security in jail without trial.&#39;</span></span>
+<span id="cb2-30"><a href="#cb2-30" tabindex="-1"></a><span class="st">IS3G22G   td7      &#39;Differences in income between poor and rich people are small.&#39;</span></span>
+<span id="cb2-31"><a href="#cb2-31" tabindex="-1"></a><span class="st">IS3G22H   td8      &#39;[R] The government influences decisions by courts of justice.&#39;</span></span>
+<span id="cb2-32"><a href="#cb2-32" tabindex="-1"></a><span class="st">IS3G22I   td9      &#39;All &lt;ethnic/racial&gt; groups in the country have the same rights.&#39;</span></span>
+<span id="cb2-33"><a href="#cb2-33" tabindex="-1"></a><span class="st">&quot;</span>,</span>
+<span id="cb2-34"><a href="#cb2-34" tabindex="-1"></a><span class="at">header=</span><span class="cn">TRUE</span>, <span class="at">stringsAsFactors =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb2-35"><a href="#cb2-35" tabindex="-1"></a></span>
+<span id="cb2-36"><a href="#cb2-36" tabindex="-1"></a><span class="co"># display item table</span></span>
+<span id="cb2-37"><a href="#cb2-37" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(items_table)</span></code></pre></div>
 <table>
 <thead>
 <tr class="header">
@@ -790,23 +790,23 @@ the same rights.</td>
 </tr>
 </tbody>
 </table>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">#------------------------------------------------</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># item selection</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co">#------------------------------------------------</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>items_selected <span class="ot">&lt;-</span> <span class="fu">read.table</span>(</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="at">text=</span><span class="st">&quot;</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="st">var_name  variable item_text</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="st">IS3G22D   td4      &#39;All adult citizens have the right to elect their political leaders.&#39;</span></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="st">IS3G22I   td9      &#39;All &lt;ethnic/racial&gt; groups in the country have the same rights.&#39;</span></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="st">IS3G22E   td5      &#39;People are able to protest if they think a law is unfair.&#39;</span></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="st">IS3G22H   td8      &#39;[R] The government influences decisions by courts of justice.&#39;</span></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="st">IS3G22B   td2      &#39;[R] One company or the government owns all newspapers in a country.&#39;</span></span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;</span>,</span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="at">header=</span><span class="cn">TRUE</span>, <span class="at">stringsAsFactors =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="co"># display item table</span></span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(items_selected)</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="co">#------------------------------------------------</span></span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="co"># item selection</span></span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a><span class="co">#------------------------------------------------</span></span>
+<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a>items_selected <span class="ot">&lt;-</span> <span class="fu">read.table</span>(</span>
+<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a><span class="at">text=</span><span class="st">&quot;</span></span>
+<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a><span class="st">var_name  variable item_text</span></span>
+<span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a><span class="st">IS3G22D   td4      &#39;All adult citizens have the right to elect their political leaders.&#39;</span></span>
+<span id="cb3-9"><a href="#cb3-9" tabindex="-1"></a><span class="st">IS3G22I   td9      &#39;All &lt;ethnic/racial&gt; groups in the country have the same rights.&#39;</span></span>
+<span id="cb3-10"><a href="#cb3-10" tabindex="-1"></a><span class="st">IS3G22E   td5      &#39;People are able to protest if they think a law is unfair.&#39;</span></span>
+<span id="cb3-11"><a href="#cb3-11" tabindex="-1"></a><span class="st">IS3G22H   td8      &#39;[R] The government influences decisions by courts of justice.&#39;</span></span>
+<span id="cb3-12"><a href="#cb3-12" tabindex="-1"></a><span class="st">IS3G22B   td2      &#39;[R] One company or the government owns all newspapers in a country.&#39;</span></span>
+<span id="cb3-13"><a href="#cb3-13" tabindex="-1"></a><span class="st">&quot;</span>,</span>
+<span id="cb3-14"><a href="#cb3-14" tabindex="-1"></a><span class="at">header=</span><span class="cn">TRUE</span>, <span class="at">stringsAsFactors =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb3-15"><a href="#cb3-15" tabindex="-1"></a></span>
+<span id="cb3-16"><a href="#cb3-16" tabindex="-1"></a><span class="co"># display item table</span></span>
+<span id="cb3-17"><a href="#cb3-17" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(items_selected)</span></code></pre></div>
 <table>
 <thead>
 <tr class="header">
@@ -849,18 +849,18 @@ in a country.</td>
 </tbody>
 </table>
 <h2 id="proporciones-de-respuesta">Proporciones de respuesta</h2>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">#--------------------------------------------------------------------</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co"># load data</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co">#--------------------------------------------------------------------</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co">#------------------------------------------------</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co"># pooled sample</span></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co">#------------------------------------------------</span></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>data_civ <span class="sc">%&gt;%</span></span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>dplyr<span class="sc">::</span><span class="fu">select</span>(td4, td9, td5, td8, td2) <span class="sc">%&gt;%</span></span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>ilsa<span class="sc">::</span><span class="fu">wide_resp</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(., <span class="at">digits =</span> <span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="co">#--------------------------------------------------------------------</span></span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="co"># load data</span></span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a><span class="co">#--------------------------------------------------------------------</span></span>
+<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a><span class="co">#------------------------------------------------</span></span>
+<span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a><span class="co"># pooled sample</span></span>
+<span id="cb4-7"><a href="#cb4-7" tabindex="-1"></a><span class="co">#------------------------------------------------</span></span>
+<span id="cb4-8"><a href="#cb4-8" tabindex="-1"></a></span>
+<span id="cb4-9"><a href="#cb4-9" tabindex="-1"></a>data_civ <span class="sc">%&gt;%</span></span>
+<span id="cb4-10"><a href="#cb4-10" tabindex="-1"></a>dplyr<span class="sc">::</span><span class="fu">select</span>(td4, td9, td5, td8, td2) <span class="sc">%&gt;%</span></span>
+<span id="cb4-11"><a href="#cb4-11" tabindex="-1"></a>ilsa<span class="sc">::</span><span class="fu">wide_resp</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb4-12"><a href="#cb4-12" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(., <span class="at">digits =</span> <span class="dv">2</span>)</span></code></pre></div>
 <table>
 <thead>
 <tr class="header">
@@ -911,35 +911,35 @@ in a country.</td>
 </table>
 <h1 id="mixture-modelling">Mixture Modelling</h1>
 <h2 id="ajustar-modelo-de-3-clases">Ajustar modelo de 3 clases</h2>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">#------------------------------------------------------------------------------</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co"># lca modelling</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co">#------------------------------------------------------------------------------</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co"># -----------------------------------------------</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="co"># class model</span></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="co"># -----------------------------------------------</span></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>class_model <span class="ot">&lt;-</span> glca<span class="sc">::</span><span class="fu">item</span>(td4, td9, td5, td8, td2) <span class="sc">~</span> <span class="dv">1</span></span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="co"># -----------------------------------------------</span></span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="co"># number of classes</span></span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="co"># -----------------------------------------------</span></span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>ac3 <span class="ot">&lt;-</span> glca<span class="sc">::</span><span class="fu">glca</span>(class_model, <span class="at">data =</span> data_civ, <span class="at">nclass =</span> <span class="dv">3</span>, <span class="at">seed =</span> <span class="dv">1</span>, <span class="at">verbose =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a><span class="co"># -----------------------------------------------</span></span>
-<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a><span class="co"># model fit</span></span>
-<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a><span class="co"># -----------------------------------------------</span></span>
-<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>fit_ac3 <span class="ot">&lt;-</span> glca<span class="sc">::</span><span class="fu">gofglca</span>(ac3, <span class="at">nboot =</span> <span class="dv">100</span>, <span class="at">test =</span> <span class="st">&#39;boot&#39;</span>, <span class="at">seed =</span> <span class="dv">20221122</span>)</span>
-<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a><span class="co"># -----------------------------------------------</span></span>
-<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a><span class="co"># display table</span></span>
-<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a><span class="co"># -----------------------------------------------</span></span>
-<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>fit_ac3<span class="sc">$</span>gtable <span class="sc">%&gt;%</span></span>
-<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>tibble<span class="sc">::</span><span class="fu">as_tibble</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(., <span class="at">digits =</span> <span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="co">#------------------------------------------------------------------------------</span></span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a><span class="co"># lca modelling</span></span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a><span class="co">#------------------------------------------------------------------------------</span></span>
+<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a><span class="co"># -----------------------------------------------</span></span>
+<span id="cb5-6"><a href="#cb5-6" tabindex="-1"></a><span class="co"># class model</span></span>
+<span id="cb5-7"><a href="#cb5-7" tabindex="-1"></a><span class="co"># -----------------------------------------------</span></span>
+<span id="cb5-8"><a href="#cb5-8" tabindex="-1"></a></span>
+<span id="cb5-9"><a href="#cb5-9" tabindex="-1"></a>class_model <span class="ot">&lt;-</span> glca<span class="sc">::</span><span class="fu">item</span>(td4, td9, td5, td8, td2) <span class="sc">~</span> <span class="dv">1</span></span>
+<span id="cb5-10"><a href="#cb5-10" tabindex="-1"></a></span>
+<span id="cb5-11"><a href="#cb5-11" tabindex="-1"></a><span class="co"># -----------------------------------------------</span></span>
+<span id="cb5-12"><a href="#cb5-12" tabindex="-1"></a><span class="co"># number of classes</span></span>
+<span id="cb5-13"><a href="#cb5-13" tabindex="-1"></a><span class="co"># -----------------------------------------------</span></span>
+<span id="cb5-14"><a href="#cb5-14" tabindex="-1"></a></span>
+<span id="cb5-15"><a href="#cb5-15" tabindex="-1"></a>ac3 <span class="ot">&lt;-</span> glca<span class="sc">::</span><span class="fu">glca</span>(class_model, <span class="at">data =</span> data_civ, <span class="at">nclass =</span> <span class="dv">3</span>, <span class="at">seed =</span> <span class="dv">1</span>, <span class="at">verbose =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb5-16"><a href="#cb5-16" tabindex="-1"></a></span>
+<span id="cb5-17"><a href="#cb5-17" tabindex="-1"></a><span class="co"># -----------------------------------------------</span></span>
+<span id="cb5-18"><a href="#cb5-18" tabindex="-1"></a><span class="co"># model fit</span></span>
+<span id="cb5-19"><a href="#cb5-19" tabindex="-1"></a><span class="co"># -----------------------------------------------</span></span>
+<span id="cb5-20"><a href="#cb5-20" tabindex="-1"></a></span>
+<span id="cb5-21"><a href="#cb5-21" tabindex="-1"></a>fit_ac3 <span class="ot">&lt;-</span> glca<span class="sc">::</span><span class="fu">gofglca</span>(ac3, <span class="at">nboot =</span> <span class="dv">100</span>, <span class="at">test =</span> <span class="st">&#39;boot&#39;</span>, <span class="at">seed =</span> <span class="dv">20221122</span>)</span>
+<span id="cb5-22"><a href="#cb5-22" tabindex="-1"></a></span>
+<span id="cb5-23"><a href="#cb5-23" tabindex="-1"></a><span class="co"># -----------------------------------------------</span></span>
+<span id="cb5-24"><a href="#cb5-24" tabindex="-1"></a><span class="co"># display table</span></span>
+<span id="cb5-25"><a href="#cb5-25" tabindex="-1"></a><span class="co"># -----------------------------------------------</span></span>
+<span id="cb5-26"><a href="#cb5-26" tabindex="-1"></a></span>
+<span id="cb5-27"><a href="#cb5-27" tabindex="-1"></a>fit_ac3<span class="sc">$</span>gtable <span class="sc">%&gt;%</span></span>
+<span id="cb5-28"><a href="#cb5-28" tabindex="-1"></a>tibble<span class="sc">::</span><span class="fu">as_tibble</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb5-29"><a href="#cb5-29" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(., <span class="at">digits =</span> <span class="dv">2</span>)</span></code></pre></div>
 <table>
 <thead>
 <tr class="header">
@@ -967,16 +967,16 @@ in a country.</td>
 </tbody>
 </table>
 <h2 id="resultados">Resultados</h2>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">#------------------------------------------------------------------------------</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co"># results</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co">#------------------------------------------------------------------------------</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co"># -----------------------------------------------</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="co"># display results</span></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="co"># -----------------------------------------------</span></span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(glca)</span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(ac3)</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="co">#------------------------------------------------------------------------------</span></span>
+<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a><span class="co"># results</span></span>
+<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a><span class="co">#------------------------------------------------------------------------------</span></span>
+<span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a></span>
+<span id="cb6-5"><a href="#cb6-5" tabindex="-1"></a><span class="co"># -----------------------------------------------</span></span>
+<span id="cb6-6"><a href="#cb6-6" tabindex="-1"></a><span class="co"># display results</span></span>
+<span id="cb6-7"><a href="#cb6-7" tabindex="-1"></a><span class="co"># -----------------------------------------------</span></span>
+<span id="cb6-8"><a href="#cb6-8" tabindex="-1"></a></span>
+<span id="cb6-9"><a href="#cb6-9" tabindex="-1"></a><span class="fu">library</span>(glca)</span>
+<span id="cb6-10"><a href="#cb6-10" tabindex="-1"></a><span class="fu">summary</span>(ac3)</span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## glca::glca(formula = class_model, data = data_civ, nclass = 3, 

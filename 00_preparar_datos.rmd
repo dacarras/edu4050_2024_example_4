@@ -1,8 +1,8 @@
 ---
 title: "Code 01: preparar datos"
-subtitle: "Latent Class Analysis (CIAE, 2022)"
+subtitle: "Latent Class Analysis (EDU4050, 2024)"
 author: "dacarras"
-date: 'Noviembre 23, 2022'
+date: 'Abril 18, 2024'
 output: github_document
 ---
 
@@ -45,8 +45,6 @@ Sys.setenv(LANG="en_US.UTF-8")
 #------------------------------------------------
 
 data_iccs <- ilsa::iccs_2016
-dplyr::glimpse(data_iccs)
-
 
 ```
 
