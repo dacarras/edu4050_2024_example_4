@@ -1,0 +1,401 @@
+---
+title: "Code 01: preparar datos"
+subtitle: "Latent Class Analysis (CIAE, 2022)"
+author: "dacarras"
+date: 'Noviembre 23, 2022'
+output: github_document
+---
+
+
+
+```{r setup, include=FALSE}
+
+#--------------------------------------------------------------------
+# setup objects
+#--------------------------------------------------------------------
+
+# remove all previous objects
+rm(list = ls())
+
+# define NA as empty
+knitr::opts_chunk$set(dev = 'png')
+options(knitr.kable.NA = '', digits = 2)
+
+# fonts
+Sys.setenv(LANG="en_US.UTF-8")
+
+
+```
+
+
+
+# Preparación de datos
+
+
+## Cargar datos desde archivo
+
+```{r, echo=TRUE, warning=FALSE, eval = FALSE}
+
+#--------------------------------------------------------------------
+# load data
+#--------------------------------------------------------------------
+
+#------------------------------------------------
+# load data from file
+#------------------------------------------------
+
+data_iccs <- ilsa::iccs_2016
+dplyr::glimpse(data_iccs)
+
+
+```
+
+
+## Cargar datos desde libreria
+
+```{r, echo=TRUE, warning=FALSE}
+
+#--------------------------------------------------------------------
+# folder locations
+#--------------------------------------------------------------------
+
+#------------------------------------------------
+# install library
+#------------------------------------------------
+
+# devtools::install_github('dacarras/ilsa',force = TRUE)
+
+#------------------------------------------------
+# load data from library
+#------------------------------------------------
+
+data_iccs <- ilsa::iccs_2016
+dplyr::glimpse(ilsa::remove_labels(data_iccs))
+
+```
+
+## Crear variables genéricas
+
+```{r, echo=TRUE, warning=FALSE}
+
+#--------------------------------------------------------------------
+# main variables
+#--------------------------------------------------------------------
+
+#------------------------------------------------
+# clustering and design variables
+#------------------------------------------------
+
+library(dplyr)
+data_svy    <- data_iccs %>%
+              # remove labels
+              ilsa::remove_labels() %>%
+              # clustering
+              mutate(id_i = seq(1:nrow(.))) %>%
+              mutate(id_j = as.numeric(as.factor(paste0(COUNTRY, JKZONES, IDSCHOOL)))) %>%
+              mutate(id_s = as.numeric(as.factor(paste0(COUNTRY, JKZONES)))) %>%
+              mutate(id_r = as.numeric(as.factor(paste0(COUNTRY, JKZONES, JKREPS)))) %>%
+              mutate(id_k = as.numeric(as.factor(paste0(COUNTRY)))) %>%
+              # survey weights
+              mutate(wt = TOTWGTS) %>%
+              # students weights
+              mutate(wi = WGTFAC2S*WGTADJ2S*WGTADJ3S) %>%
+              # school weights
+              mutate(wj = WGTFAC1*WGTADJ1S) %>%
+              # create senate weights
+              ilsa::senate_weights(., wt = 'wt', id_k = 'id_k', scale = 1000) %>%
+              # create scaled weights
+              ilsa::lsa_weights(., 
+                id_i = 'id_i', 
+                id_j = 'id_j', 
+                id_k = 'id_k', 
+                wt = 'wt', 
+                wi = 'wi', 
+                wj = 'wj') %>%
+              dplyr::glimpse()
+
+```
+
+
+## Agregar nombre de paises
+
+```{r, echo=TRUE, warning=FALSE}
+
+#--------------------------------------------------------------------
+# country names
+#--------------------------------------------------------------------
+
+#------------------------------------------------
+# country table
+#------------------------------------------------
+
+country_table <- read.table(
+text="
+COUNTRY  IDCNTRY   ctry_name
+BFL      956       'Belgium (Flemish)'
+BGR      100       'Bulgaria'
+CHL      152       'Chile'
+COL      170       'Colombia'
+DNK      208       'Denmark'
+DNW      276001    'North Rhine-Westphalia'
+DOM      214       'Dominican Republic'
+EST      233       'Estonia'
+FIN      246       'Finland'
+HKG      344       'Hong Kong, SAR China'
+HRV      191       'Croatia'
+ITA      380       'Italy'
+KOR      410       'Korea (South)'
+LTU      440       'Lithuania'
+LVA      428       'Latvia'
+MEX      484       'Mexico'
+MLT      470       'Malta'
+NLD      528       'Netherlands'
+NOR      578       'Norway'
+PER      604       'Peru'
+RUS      643       'Russian Federation'
+SVN      705       'Slovenia'
+SWE      752       'Sweden'
+TWN      158       'Taiwan, Republic of China'
+",
+header=TRUE, stringsAsFactors = FALSE)
+knitr::kable(country_table)
+
+
+#------------------------------------------------
+# add country names
+#------------------------------------------------
+
+library(dplyr)
+data_cty   <- data_svy %>%
+              dplyr::left_join(., 
+                dplyr::select(country_table, COUNTRY, ctry_name), 
+                by = 'COUNTRY') %>%
+              dplyr::glimpse()
+
+
+```
+
+
+## Recodificar variables de interés
+
+>Nota: no es necesario dicotimizar las variables originales. Los modelos de clases latentes pueden ser ajustados sobre matrices de respuesta con más de dos categorias. Para le primer ejemplo, acera de "civic norms", categorizamos las variables originales, para tener resultados comparables a la literatura previa (Hooghe and Oser 2015; Hooghe et al. 2016). Para el segundo ejemplos, acerca de "concepto de democracia", re-categorizamos las respuestas originales, para hacerlas interpretables en el modo de Quaranta (2019).
+
+
+```{r, echo=TRUE, warning=FALSE}
+
+#--------------------------------------------------------------------
+# responses to items
+#--------------------------------------------------------------------
+
+# -----------------------------------------------
+# recode functions
+# -----------------------------------------------
+
+rec_1 <- function(x){
+dplyr::case_when(
+#  variable == old ~ new
+  x == 1 ~ 1,
+  x == 2 ~ 1,
+  x == 3 ~ 0,
+  x == 4 ~ 0,   
+  TRUE ~ as.numeric(x))
+# Note: it recodes likert type items,
+#       where 1 is very important (1) and quite important (2)
+#       and zero is not very important (3) and not important at all (4)
+}
+
+rec_2 <- function(x){
+dplyr::case_when(
+  x == 1 ~ 1, # good for democracy
+  x == 2 ~ 0, # neither good or bad for democracy
+  x == 3 ~ 0, # bad for democracy
+  TRUE ~ as.numeric(x))
+}
+
+rec_3 <- function(x){
+dplyr::case_when(
+  x == 1 ~ 0, # good for democracy
+  x == 2 ~ 0, # neither good or bad for democracy
+  x == 3 ~ 1, # bad for democracy
+  TRUE ~ as.numeric(x))
+}
+
+#------------------------------------------------
+# recode original responses
+#------------------------------------------------
+
+library(dplyr)
+data_items <- data_cty %>%
+              # citizenship norms
+              mutate(n01 = rec_1(IS3G23A)) %>% 
+              mutate(n02 = rec_1(IS3G23B)) %>% 
+              mutate(n03 = rec_1(IS3G23C)) %>% 
+              mutate(n04 = rec_1(IS3G23D)) %>% 
+              mutate(n05 = rec_1(IS3G23E)) %>% 
+              mutate(n06 = rec_1(IS3G23F)) %>% 
+              mutate(n07 = rec_1(IS3G23G)) %>% 
+              mutate(n08 = rec_1(IS3G23H)) %>% 
+              mutate(n09 = rec_1(IS3G23I)) %>% 
+              mutate(n10 = rec_1(IS3G23J)) %>% 
+              mutate(n11 = rec_1(IS3G23K)) %>% 
+              mutate(n12 = rec_1(IS3G23L)) %>% 
+              # concept of democracy
+              mutate(td1 = rec_3(IS3G22A)) %>%
+              mutate(td2 = rec_3(IS3G22B)) %>%
+              mutate(td3 = rec_2(IS3G22C)) %>%
+              mutate(td4 = rec_2(IS3G22D)) %>%
+              mutate(td5 = rec_2(IS3G22E)) %>%
+              mutate(td6 = rec_3(IS3G22F)) %>%
+              mutate(td7 = rec_2(IS3G22G)) %>%
+              mutate(td8 = rec_3(IS3G22H)) %>%
+              mutate(td9 = rec_2(IS3G22I)) %>%
+              dplyr::glimpse()
+
+#------------------------------------------------
+# item info
+#------------------------------------------------
+
+items_table <- read.table(
+text="
+var_name  variable item_text
+IS3G23A   n01      'Voting in every national election'
+IS3G23B   n02      'Joining a political party'
+IS3G23C   n03      'Learning about the country history'
+IS3G23D   n04      'Following political issues in the newspaper, on theradio, on TV or on the Internet'
+IS3G23E   n05      'Showing respect for government representatives'
+IS3G23F   n06      'Engaging in political discussions'
+IS3G23G   n07      'Participating in peaceful protests against laws believed to be unjust'
+IS3G23H   n08      'Participating in activities to benefit people in the <local community>'
+IS3G23I   n09      'Taking part in activities promoting human rights'
+IS3G23J   n10      'Taking part in activities to protect the environment'
+IS3G23K   n11      'Working hard'
+IS3G23L   n12      'Always obeying the law'
+IS3G22A   td1      '[R] Political leaders give government jobs to their family members.'
+IS3G22B   td2      '[R] One company or the government owns all newspapers in a country.'
+IS3G22C   td3      'People are allowed to publicly criticize the government.'
+IS3G22D   td4      'All adult citizens have the right to elect their political leaders.'
+IS3G22E   td5      'People are able to protest if they think a law is unfair.'
+IS3G22F   td6      '[R] The police have the right to hold people suspected of threatening national security in jail without trial.'
+IS3G22G   td7      'Differences in income between poor and rich people are small.'
+IS3G22H   td8      '[R] The government influences decisions by courts of justice.'
+IS3G22I   td9      'All <ethnic/racial> groups in the country have the same rights.'
+",
+header=TRUE, stringsAsFactors = FALSE)
+
+# display item table
+knitr::kable(items_table)
+
+
+```
+
+**Referencias**
+
+Sandoval-Hernández, A., & Carrasco, D. (2020). A Measurement Strategy for SDG Thematic Indicators 4.7.4 and 4.7.5 Using International Large Scale Assessments in Education. http://tcg.uis.unesco.org/wp-content/uploads/sites/4/2020/06/Measurement-Strategy-for-474-and-475-using-ILSA_20200625.pdf
+
+Hooghe, M., & Oser, J. (2015). The rise of engaged citizenship: The evolution of citizenship norms among adolescents in 21 countries between 1999 and 2009. International Journal of Comparative Sociology, 56(1), 29–52. https://doi.org/10.1177/0020715215578488.
+
+Hooghe, M., Oser, J., & Marien, S. (2016). A comparative analysis of ‘good citizenship’: A latent class analysis of adolescents’ citizenship norms in 38 countries. International Political Science
+
+Quaranta, M. (2019). What makes up democracy? Meanings of democracy and their correlates among adolescents in 38 countries. Acta Politica, 0123456789. https://doi.org/10.1057/s41269-019-00129-4
+
+
+## Selección de casos
+
+>Nota: Seleccionamos muestras, solo para que la generación de resultados sea más rápida durante el taller.
+
+
+```{r, echo=TRUE, warning=FALSE}
+
+#--------------------------------------------------------------------
+# responses to items
+#--------------------------------------------------------------------
+
+#------------------------------------------------
+# define random seed
+#------------------------------------------------
+
+set.seed(123)
+
+#------------------------------------------------
+# select 500 random cases per country
+#------------------------------------------------
+
+sel500  <- data_items %>%
+           group_by(id_k) %>%
+           sample_n(700, weights = ws, replace = FALSE) %>%
+           ungroup() %>%           
+           mutate(sel500 = 1) %>%
+           dplyr::select(id_i, id_k, sel500)
+
+#------------------------------------------------
+# display table of selecion
+#------------------------------------------------
+
+dplyr::count(sel500, id_k, sel500)
+
+#------------------------------------------------
+# add selection dummy
+#------------------------------------------------
+
+data_flag  <- data_items %>%
+              dplyr::left_join(., 
+                dplyr::select(sel500, id_i, sel500), by = 'id_i') %>%
+              mutate(sel500 = tidyr::replace_na(sel500, 0)) %>%
+              dplyr::glimpse() 
+
+
+#------------------------------------------------
+# data for workshop
+#------------------------------------------------
+
+library(dplyr)
+data_civ  <- data_flag %>%
+              dplyr::filter(ctry_name %in% 
+                c(
+                  'Chile',
+                  'Colombia'
+                  )
+                ) %>%
+              dplyr::filter(sel500 == 1) %>%
+              dplyr::select(id_i, ws, ctry_name, n01:td9) %>%
+              dplyr::glimpse()
+
+
+#------------------------------------------------
+# subselection
+#------------------------------------------------
+
+sub_sel <- data_civ %>%
+           group_by(ctry_name) %>%
+           sample_n(350, weights = ws, replace = FALSE) %>%
+           ungroup() %>%
+           mutate(sub = 1) %>%
+           dplyr::select(id_i, sub)
+
+#------------------------------------------------
+# sub sample data
+#------------------------------------------------
+
+library(dplyr)
+data_exp   <- data_civ %>%
+              dplyr::left_join(., sub_sel, by = 'id_i') %>%
+              mutate(sub = tidyr::replace_na(sub, 0)) %>%
+              dplyr::filter(sub == 1) %>%
+              dplyr::glimpse()
+
+library(dplyr)
+data_con   <- data_civ %>%
+              dplyr::left_join(., sub_sel, by = 'id_i') %>%
+              mutate(sub = tidyr::replace_na(sub, 0)) %>%
+              dplyr::filter(sub == 0) %>%
+              dplyr::glimpse()
+
+#------------------------------------------------
+# save data
+#------------------------------------------------
+
+data_civ %>% saveRDS('data_civ.rds')
+data_exp %>% saveRDS('data_exp.rds')
+data_con %>% saveRDS('data_con.rds')
+
+```

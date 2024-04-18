@@ -1,0 +1,339 @@
+---
+title: "Code 01: numero de clases"
+subtitle: "Latent Class Analysis (EDU4050, 2024)"
+author: "dacarras"
+date: 'Abril 18, 2024'
+output: github_document
+---
+
+
+```{r setup, include=FALSE}
+
+#--------------------------------------------------------------------
+# setup objects
+#--------------------------------------------------------------------
+
+# remove all previous objects
+rm(list = ls())
+
+# define NA as empty
+knitr::opts_chunk$set(dev = 'png')
+options(knitr.kable.NA = '', digits = 2)
+
+# fonts
+Sys.setenv(LANG="en_US.UTF-8")
+
+
+```
+
+
+# Cargar datos
+
+## Cargar datos desde archivo
+
+```{r, echo=TRUE, warning=FALSE, eval = TRUE}
+
+#--------------------------------------------------------------------
+# load data
+#--------------------------------------------------------------------
+
+#------------------------------------------------
+# load data from file
+#------------------------------------------------
+
+data_civ <- readRDS('data_civ.rds') # pooled
+data_exp <- readRDS('data_exp.rds') # exploratory
+data_con <- readRDS('data_con.rds') # confirmatory
+
+```
+
+# Descriptivos
+
+## Items
+
+```{r, echo=TRUE, warning=FALSE, eval = TRUE}
+
+#--------------------------------------------------------------------
+# item
+#--------------------------------------------------------------------
+
+#------------------------------------------------
+# item info
+#------------------------------------------------
+
+items_table <- read.table(
+text="
+var_name  variable item_text
+IS3G23A   n01      'Voting in every national election'
+IS3G23B   n02      'Joining a political party'
+IS3G23C   n03      'Learning about the country history'
+IS3G23D   n04      'Following political issues in the newspaper, on theradio, on TV or on the Internet'
+IS3G23E   n05      'Showing respect for government representatives'
+IS3G23F   n06      'Engaging in political discussions'
+IS3G23G   n07      'Participating in peaceful protests against laws believed to be unjust'
+IS3G23H   n08      'Participating in activities to benefit people in the <local community>'
+IS3G23I   n09      'Taking part in activities promoting human rights'
+IS3G23J   n10      'Taking part in activities to protect the environment'
+IS3G23K   n11      'Working hard'
+IS3G23L   n12      'Always obeying the law'
+IS3G22A   td1      '[R] Political leaders give government jobs to their family members.'
+IS3G22B   td2      '[R] One company or the government owns all newspapers in a country.'
+IS3G22C   td3      'People are allowed to publicly criticize the government.'
+IS3G22D   td4      'All adult citizens have the right to elect their political leaders.'
+IS3G22E   td5      'People are able to protest if they think a law is unfair.'
+IS3G22F   td6      '[R] The police have the right to hold people suspected of threatening national security in jail without trial.'
+IS3G22G   td7      'Differences in income between poor and rich people are small.'
+IS3G22H   td8      '[R] The government influences decisions by courts of justice.'
+IS3G22I   td9      'All <ethnic/racial> groups in the country have the same rights.'
+",
+header=TRUE, stringsAsFactors = FALSE)
+
+# display item table
+knitr::kable(items_table)
+
+#------------------------------------------------
+# item selection
+#------------------------------------------------
+
+items_selected <- read.table(
+text="
+var_name  variable item_text
+IS3G22D   td4      'All adult citizens have the right to elect their political leaders.'
+IS3G22I   td9      'All <ethnic/racial> groups in the country have the same rights.'
+IS3G22E   td5      'People are able to protest if they think a law is unfair.'
+IS3G22H   td8      '[R] The government influences decisions by courts of justice.'
+IS3G22B   td2      '[R] One company or the government owns all newspapers in a country.'
+",
+header=TRUE, stringsAsFactors = FALSE)
+
+# display item table
+knitr::kable(items_selected)
+
+```
+
+## Proporciones de respuesta
+
+```{r, echo=TRUE, warning=FALSE, eval = TRUE}
+
+#--------------------------------------------------------------------
+# load data
+#--------------------------------------------------------------------
+
+#------------------------------------------------
+# exploratory sample
+#------------------------------------------------
+
+data_exp %>%
+dplyr::select(td4, td9, td5, td8, td2) %>%
+ilsa::wide_resp() %>%
+knitr::kable(., digits = 2)
+
+#------------------------------------------------
+# confirmatory sample
+#------------------------------------------------
+
+data_con %>%
+dplyr::select(td4, td9, td5, td8, td2) %>%
+ilsa::wide_resp() %>%
+knitr::kable(., digits = 2)
+
+#------------------------------------------------
+# pooled sample
+#------------------------------------------------
+
+data_civ %>%
+dplyr::select(td4, td9, td5, td8, td2) %>%
+ilsa::wide_resp() %>%
+knitr::kable(., digits = 2)
+
+
+```
+
+# Mixture Modelling
+
+## Ecuación
+
+
+```{r, echo=TRUE, warning=FALSE, eval = TRUE}
+
+#------------------------------------------------------------------------------
+# lca modelling
+#------------------------------------------------------------------------------
+
+# -----------------------------------------------
+# class model
+# -----------------------------------------------
+
+class_model <- glca::item(td4, td9, td5, td8, td2) ~ 1
+
+```
+
+## Número de clases (exploratory)
+
+```{r, echo=TRUE, warning=FALSE, eval = TRUE}
+
+#------------------------------------------------------------------------------
+# lca modelling
+#------------------------------------------------------------------------------
+
+# -----------------------------------------------
+# number of classes
+# -----------------------------------------------
+
+ec2 <- glca::glca(class_model, data = data_exp, nclass = 2, seed = 1, verbose = FALSE)
+ec3 <- glca::glca(class_model, data = data_exp, nclass = 3, seed = 1, verbose = FALSE)
+ec4 <- glca::glca(class_model, data = data_exp, nclass = 4, seed = 1, verbose = FALSE)
+
+# -----------------------------------------------
+# model comparison
+# -----------------------------------------------
+
+fit_exp <- glca::gofglca(ec2, ec3, ec4, nboot = 100, test = 'boot', seed = 20221122)
+
+
+
+
+# -----------------------------------------------
+# fit table
+# -----------------------------------------------
+
+fit_table_exp <- fit_exp$gtable %>%
+                 tibble::as_tibble() %>%
+                 mutate(clases = c(2,3,4)) %>%
+                 mutate(SIC = -.5*BIC) %>% 
+                 mutate(cmP = exp(SIC-max(SIC))/sum(exp(SIC-max(SIC)))) %>%
+                 mutate(BF = exp(SIC - dplyr::lead(SIC)))
+
+# -----------------------------------------------
+# display table
+# -----------------------------------------------
+
+fit_table_exp %>%
+knitr::kable(., digits = 2)
+
+# -----------------------------------------------
+# scree plot
+# -----------------------------------------------
+
+library(ggplot2)
+fit_table_exp %>%
+mutate(grp = 'model') %>%
+ggplot(., 
+  aes(x = clases, y = BIC, group = grp)) +
+  geom_point() +
+  geom_line() +
+  theme_bw()
+
+```
+
+
+## Número de clases (confirmatory)
+
+```{r, echo=TRUE, warning=FALSE, eval = TRUE}
+
+#------------------------------------------------------------------------------
+# lca modelling
+#------------------------------------------------------------------------------
+
+# -----------------------------------------------
+# number of classes
+# -----------------------------------------------
+
+cc2 <- glca::glca(class_model, data = data_con, nclass = 2, seed = 1, verbose = FALSE)
+cc3 <- glca::glca(class_model, data = data_con, nclass = 3, seed = 1, verbose = FALSE)
+cc4 <- glca::glca(class_model, data = data_con, nclass = 4, seed = 1, verbose = FALSE)
+
+# -----------------------------------------------
+# model comparison
+# -----------------------------------------------
+
+fit_con <- glca::gofglca(cc2, cc3, cc4, nboot = 100, test = 'boot', seed = 20221122)
+
+# -----------------------------------------------
+# fit table
+# -----------------------------------------------
+
+fit_table_con <- fit_con$gtable %>%
+                 tibble::as_tibble() %>%
+                 mutate(clases = c(2,3,4)) %>%
+                 mutate(SIC = -.5*BIC) %>% 
+                 mutate(cmP = exp(SIC-max(SIC))/sum(exp(SIC-max(SIC)))) %>%
+                 mutate(BF = exp(SIC - dplyr::lead(SIC)))
+
+# -----------------------------------------------
+# display table
+# -----------------------------------------------
+
+fit_table_con %>%
+knitr::kable(., digits = 2)
+
+# -----------------------------------------------
+# scree plot
+# -----------------------------------------------
+
+library(ggplot2)
+fit_table_con %>%
+mutate(grp = 'model') %>%
+ggplot(., 
+  aes(x = clases, y = BIC, group = grp)) +
+  geom_point() +
+  geom_line() +
+  theme_bw()
+
+```
+
+## Número de clases (pooled)
+
+```{r, echo=TRUE, warning=FALSE, eval = TRUE}
+
+#------------------------------------------------------------------------------
+# lca modelling
+#------------------------------------------------------------------------------
+
+# -----------------------------------------------
+# number of classes
+# -----------------------------------------------
+
+ac2 <- glca::glca(class_model, data = data_civ, nclass = 2, seed = 1, verbose = FALSE)
+ac3 <- glca::glca(class_model, data = data_civ, nclass = 3, seed = 1, verbose = FALSE)
+ac4 <- glca::glca(class_model, data = data_civ, nclass = 4, seed = 1, verbose = FALSE)
+
+# -----------------------------------------------
+# model comparison
+# -----------------------------------------------
+
+fit_all <- glca::gofglca(ac2, ac3, ac4, nboot = 100, test = 'boot', seed = 20221122)
+
+# -----------------------------------------------
+# fit table
+# -----------------------------------------------
+
+fit_table_all <- fit_all$gtable %>%
+                 tibble::as_tibble() %>%
+                 mutate(clases = c(2,3,4)) %>%
+                 mutate(SIC = -.5*BIC) %>% 
+                 mutate(cmP = exp(SIC-max(SIC))/sum(exp(SIC-max(SIC)))) %>%
+                 mutate(BF = exp(SIC - dplyr::lead(SIC)))
+
+# -----------------------------------------------
+# model comparison via BIC, cmP and BF
+# -----------------------------------------------
+
+fit_table_all %>%
+knitr::kable(., digits = 2)
+
+# -----------------------------------------------
+# scree plot
+# -----------------------------------------------
+
+library(ggplot2)
+fit_table_all %>%
+mutate(grp = 'model') %>%
+ggplot(., 
+  aes(x = clases, y = BIC, group = grp)) +
+  geom_point() +
+  geom_line() +
+  theme_bw()
+
+```
+

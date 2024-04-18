@@ -1,0 +1,1732 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style type="text/css">
+@font-face {
+font-family: octicons-link;
+src: url(data:font/woff;charset=utf-8;base64,d09GRgABAAAAAAZwABAAAAAACFQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABEU0lHAAAGaAAAAAgAAAAIAAAAAUdTVUIAAAZcAAAACgAAAAoAAQAAT1MvMgAAAyQAAABJAAAAYFYEU3RjbWFwAAADcAAAAEUAAACAAJThvmN2dCAAAATkAAAABAAAAAQAAAAAZnBnbQAAA7gAAACyAAABCUM+8IhnYXNwAAAGTAAAABAAAAAQABoAI2dseWYAAAFsAAABPAAAAZwcEq9taGVhZAAAAsgAAAA0AAAANgh4a91oaGVhAAADCAAAABoAAAAkCA8DRGhtdHgAAAL8AAAADAAAAAwGAACfbG9jYQAAAsAAAAAIAAAACABiATBtYXhwAAACqAAAABgAAAAgAA8ASm5hbWUAAAToAAABQgAAAlXu73sOcG9zdAAABiwAAAAeAAAAME3QpOBwcmVwAAAEbAAAAHYAAAB/aFGpk3jaTY6xa8JAGMW/O62BDi0tJLYQincXEypYIiGJjSgHniQ6umTsUEyLm5BV6NDBP8Tpts6F0v+k/0an2i+itHDw3v2+9+DBKTzsJNnWJNTgHEy4BgG3EMI9DCEDOGEXzDADU5hBKMIgNPZqoD3SilVaXZCER3/I7AtxEJLtzzuZfI+VVkprxTlXShWKb3TBecG11rwoNlmmn1P2WYcJczl32etSpKnziC7lQyWe1smVPy/Lt7Kc+0vWY/gAgIIEqAN9we0pwKXreiMasxvabDQMM4riO+qxM2ogwDGOZTXxwxDiycQIcoYFBLj5K3EIaSctAq2kTYiw+ymhce7vwM9jSqO8JyVd5RH9gyTt2+J/yUmYlIR0s04n6+7Vm1ozezUeLEaUjhaDSuXHwVRgvLJn1tQ7xiuVv/ocTRF42mNgZGBgYGbwZOBiAAFGJBIMAAizAFoAAABiAGIAznjaY2BkYGAA4in8zwXi+W2+MjCzMIDApSwvXzC97Z4Ig8N/BxYGZgcgl52BCSQKAA3jCV8CAABfAAAAAAQAAEB42mNgZGBg4f3vACQZQABIMjKgAmYAKEgBXgAAeNpjYGY6wTiBgZWBg2kmUxoDA4MPhGZMYzBi1AHygVLYQUCaawqDA4PChxhmh/8ODDEsvAwHgMKMIDnGL0x7gJQCAwMAJd4MFwAAAHjaY2BgYGaA4DAGRgYQkAHyGMF8NgYrIM3JIAGVYYDT+AEjAwuDFpBmA9KMDEwMCh9i/v8H8sH0/4dQc1iAmAkALaUKLgAAAHjaTY9LDsIgEIbtgqHUPpDi3gPoBVyRTmTddOmqTXThEXqrob2gQ1FjwpDvfwCBdmdXC5AVKFu3e5MfNFJ29KTQT48Ob9/lqYwOGZxeUelN2U2R6+cArgtCJpauW7UQBqnFkUsjAY/kOU1cP+DAgvxwn1chZDwUbd6CFimGXwzwF6tPbFIcjEl+vvmM/byA48e6tWrKArm4ZJlCbdsrxksL1AwWn/yBSJKpYbq8AXaaTb8AAHja28jAwOC00ZrBeQNDQOWO//sdBBgYGRiYWYAEELEwMTE4uzo5Zzo5b2BxdnFOcALxNjA6b2ByTswC8jYwg0VlNuoCTWAMqNzMzsoK1rEhNqByEyerg5PMJlYuVueETKcd/89uBpnpvIEVomeHLoMsAAe1Id4AAAAAAAB42oWQT07CQBTGv0JBhagk7HQzKxca2sJCE1hDt4QF+9JOS0nbaaYDCQfwCJ7Au3AHj+LO13FMmm6cl7785vven0kBjHCBhfpYuNa5Ph1c0e2Xu3jEvWG7UdPDLZ4N92nOm+EBXuAbHmIMSRMs+4aUEd4Nd3CHD8NdvOLTsA2GL8M9PODbcL+hD7C1xoaHeLJSEao0FEW14ckxC+TU8TxvsY6X0eLPmRhry2WVioLpkrbp84LLQPGI7c6sOiUzpWIWS5GzlSgUzzLBSikOPFTOXqly7rqx0Z1Q5BAIoZBSFihQYQOOBEdkCOgXTOHA07HAGjGWiIjaPZNW13/+lm6S9FT7rLHFJ6fQbkATOG1j2OFMucKJJsxIVfQORl+9Jyda6Sl1dUYhSCm1dyClfoeDve4qMYdLEbfqHf3O/AdDumsjAAB42mNgYoAAZQYjBmyAGYQZmdhL8zLdDEydARfoAqIAAAABAAMABwAKABMAB///AA8AAQAAAAAAAAAAAAAAAAABAAAAAA==) format('woff');
+}
+body {
+-webkit-text-size-adjust: 100%;
+text-size-adjust: 100%;
+color: #333;
+font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+font-size: 16px;
+line-height: 1.6;
+word-wrap: break-word;
+}
+a {
+background-color: transparent;
+}
+a:active,
+a:hover {
+outline: 0;
+}
+strong {
+font-weight: bold;
+}
+h1 {
+font-size: 2em;
+margin: 0.67em 0;
+}
+img {
+border: 0;
+}
+hr {
+box-sizing: content-box;
+height: 0;
+}
+pre {
+overflow: auto;
+}
+code,
+kbd,
+pre {
+font-family: monospace, monospace;
+font-size: 1em;
+}
+input {
+color: inherit;
+font: inherit;
+margin: 0;
+}
+html input[disabled] {
+cursor: default;
+}
+input {
+line-height: normal;
+}
+input[type="checkbox"] {
+box-sizing: border-box;
+padding: 0;
+}
+table {
+border-collapse: collapse;
+border-spacing: 0;
+}
+td,
+th {
+padding: 0;
+}
+* {
+box-sizing: border-box;
+}
+input {
+font: 13px / 1.4 Helvetica, arial, nimbussansl, liberationsans, freesans, clean, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+a {
+color: #4078c0;
+text-decoration: none;
+}
+a:hover,
+a:active {
+text-decoration: underline;
+}
+hr {
+height: 0;
+margin: 15px 0;
+overflow: hidden;
+background: transparent;
+border: 0;
+border-bottom: 1px solid #ddd;
+}
+hr:before {
+display: table;
+content: "";
+}
+hr:after {
+display: table;
+clear: both;
+content: "";
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+margin-top: 15px;
+margin-bottom: 15px;
+line-height: 1.1;
+}
+h1 {
+font-size: 30px;
+}
+h2 {
+font-size: 21px;
+}
+h3 {
+font-size: 16px;
+}
+h4 {
+font-size: 14px;
+}
+h5 {
+font-size: 12px;
+}
+h6 {
+font-size: 11px;
+}
+blockquote {
+margin: 0;
+}
+ul,
+ol {
+padding: 0;
+margin-top: 0;
+margin-bottom: 0;
+}
+ol ol,
+ul ol {
+list-style-type: lower-roman;
+}
+ul ul ol,
+ul ol ol,
+ol ul ol,
+ol ol ol {
+list-style-type: lower-alpha;
+}
+dd {
+margin-left: 0;
+}
+code {
+font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+font-size: 12px;
+}
+pre {
+margin-top: 0;
+margin-bottom: 0;
+font: 12px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+}
+.select::-ms-expand {
+opacity: 0;
+}
+.octicon {
+font: normal normal normal 16px/1 octicons-link;
+display: inline-block;
+text-decoration: none;
+text-rendering: auto;
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+-webkit-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+}
+.octicon-link:before {
+content: '\f05c';
+}
+.markdown-body:before {
+display: table;
+content: "";
+}
+.markdown-body:after {
+display: table;
+clear: both;
+content: "";
+}
+.markdown-body>*:first-child {
+margin-top: 0 !important;
+}
+.markdown-body>*:last-child {
+margin-bottom: 0 !important;
+}
+a:not([href]) {
+color: inherit;
+text-decoration: none;
+}
+.anchor {
+display: inline-block;
+padding-right: 2px;
+margin-left: -18px;
+}
+.anchor:focus {
+outline: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+margin-top: 1em;
+margin-bottom: 16px;
+font-weight: bold;
+line-height: 1.4;
+}
+h1 .octicon-link,
+h2 .octicon-link,
+h3 .octicon-link,
+h4 .octicon-link,
+h5 .octicon-link,
+h6 .octicon-link {
+color: #000;
+vertical-align: middle;
+visibility: hidden;
+}
+h1:hover .anchor,
+h2:hover .anchor,
+h3:hover .anchor,
+h4:hover .anchor,
+h5:hover .anchor,
+h6:hover .anchor {
+text-decoration: none;
+}
+h1:hover .anchor .octicon-link,
+h2:hover .anchor .octicon-link,
+h3:hover .anchor .octicon-link,
+h4:hover .anchor .octicon-link,
+h5:hover .anchor .octicon-link,
+h6:hover .anchor .octicon-link {
+visibility: visible;
+}
+h1 {
+padding-bottom: 0.3em;
+font-size: 2.25em;
+line-height: 1.2;
+border-bottom: 1px solid #eee;
+}
+h1 .anchor {
+line-height: 1;
+}
+h2 {
+padding-bottom: 0.3em;
+font-size: 1.75em;
+line-height: 1.225;
+border-bottom: 1px solid #eee;
+}
+h2 .anchor {
+line-height: 1;
+}
+h3 {
+font-size: 1.5em;
+line-height: 1.43;
+}
+h3 .anchor {
+line-height: 1.2;
+}
+h4 {
+font-size: 1.25em;
+}
+h4 .anchor {
+line-height: 1.2;
+}
+h5 {
+font-size: 1em;
+}
+h5 .anchor {
+line-height: 1.1;
+}
+h6 {
+font-size: 1em;
+color: #777;
+}
+h6 .anchor {
+line-height: 1.1;
+}
+p,
+blockquote,
+ul,
+ol,
+dl,
+table,
+pre {
+margin-top: 0;
+margin-bottom: 16px;
+}
+hr {
+height: 4px;
+padding: 0;
+margin: 16px 0;
+background-color: #e7e7e7;
+border: 0 none;
+}
+ul,
+ol {
+padding-left: 2em;
+}
+ul ul,
+ul ol,
+ol ol,
+ol ul {
+margin-top: 0;
+margin-bottom: 0;
+}
+li>p {
+margin-top: 16px;
+}
+dl {
+padding: 0;
+}
+dl dt {
+padding: 0;
+margin-top: 16px;
+font-size: 1em;
+font-style: italic;
+font-weight: bold;
+}
+dl dd {
+padding: 0 16px;
+margin-bottom: 16px;
+}
+blockquote {
+padding: 0 15px;
+color: #777;
+border-left: 4px solid #ddd;
+}
+blockquote>:first-child {
+margin-top: 0;
+}
+blockquote>:last-child {
+margin-bottom: 0;
+}
+table {
+display: block;
+width: 100%;
+overflow: auto;
+word-break: normal;
+word-break: keep-all;
+}
+table th {
+font-weight: bold;
+}
+table th,
+table td {
+padding: 6px 13px;
+border: 1px solid #ddd;
+}
+table tr {
+background-color: #fff;
+border-top: 1px solid #ccc;
+}
+table tr:nth-child(2n) {
+background-color: #f8f8f8;
+}
+img {
+max-width: 100%;
+box-sizing: content-box;
+background-color: #fff;
+}
+code {
+padding: 0;
+padding-top: 0.2em;
+padding-bottom: 0.2em;
+margin: 0;
+font-size: 85%;
+background-color: rgba(0,0,0,0.04);
+border-radius: 3px;
+}
+code:before,
+code:after {
+letter-spacing: -0.2em;
+content: "\00a0";
+}
+pre>code {
+padding: 0;
+margin: 0;
+font-size: 100%;
+word-break: normal;
+white-space: pre;
+background: transparent;
+border: 0;
+}
+.highlight {
+margin-bottom: 16px;
+}
+.highlight pre,
+pre {
+padding: 16px;
+overflow: auto;
+font-size: 85%;
+line-height: 1.45;
+background-color: #f7f7f7;
+border-radius: 3px;
+}
+.highlight pre {
+margin-bottom: 0;
+word-break: normal;
+}
+pre {
+word-wrap: normal;
+}
+pre code {
+display: inline;
+max-width: initial;
+padding: 0;
+margin: 0;
+overflow: initial;
+line-height: inherit;
+word-wrap: normal;
+background-color: transparent;
+border: 0;
+}
+pre code:before,
+pre code:after {
+content: normal;
+}
+kbd {
+display: inline-block;
+padding: 3px 5px;
+font-size: 11px;
+line-height: 10px;
+color: #555;
+vertical-align: middle;
+background-color: #fcfcfc;
+border: solid 1px #ccc;
+border-bottom-color: #bbb;
+border-radius: 3px;
+box-shadow: inset 0 -1px 0 #bbb;
+}
+.pl-c {
+color: #969896;
+}
+.pl-c1,
+.pl-s .pl-v {
+color: #0086b3;
+}
+.pl-e,
+.pl-en {
+color: #795da3;
+}
+.pl-s .pl-s1,
+.pl-smi {
+color: #333;
+}
+.pl-ent {
+color: #63a35c;
+}
+.pl-k {
+color: #a71d5d;
+}
+.pl-pds,
+.pl-s,
+.pl-s .pl-pse .pl-s1,
+.pl-sr,
+.pl-sr .pl-cce,
+.pl-sr .pl-sra,
+.pl-sr .pl-sre {
+color: #183691;
+}
+.pl-v {
+color: #ed6a43;
+}
+.pl-id {
+color: #b52a1d;
+}
+.pl-ii {
+background-color: #b52a1d;
+color: #f8f8f8;
+}
+.pl-sr .pl-cce {
+color: #63a35c;
+font-weight: bold;
+}
+.pl-ml {
+color: #693a17;
+}
+.pl-mh,
+.pl-mh .pl-en,
+.pl-ms {
+color: #1d3e81;
+font-weight: bold;
+}
+.pl-mq {
+color: #008080;
+}
+.pl-mi {
+color: #333;
+font-style: italic;
+}
+.pl-mb {
+color: #333;
+font-weight: bold;
+}
+.pl-md {
+background-color: #ffecec;
+color: #bd2c00;
+}
+.pl-mi1 {
+background-color: #eaffea;
+color: #55a532;
+}
+.pl-mdr {
+color: #795da3;
+font-weight: bold;
+}
+.pl-mo {
+color: #1d3e81;
+}
+kbd {
+display: inline-block;
+padding: 3px 5px;
+font: 11px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+line-height: 10px;
+color: #555;
+vertical-align: middle;
+background-color: #fcfcfc;
+border: solid 1px #ccc;
+border-bottom-color: #bbb;
+border-radius: 3px;
+box-shadow: inset 0 -1px 0 #bbb;
+}
+.task-list-item {
+list-style-type: none;
+}
+.task-list-item+.task-list-item {
+margin-top: 3px;
+}
+.task-list-item input {
+margin: 0 0.35em 0.25em -1.6em;
+vertical-align: middle;
+}
+:checked+.radio-label {
+z-index: 1;
+position: relative;
+border-color: #4078c0;
+}
+.sourceLine {
+display: inline-block;
+}
+code .kw { color: #000000; }
+code .dt { color: #ed6a43; }
+code .dv { color: #009999; }
+code .bn { color: #009999; }
+code .fl { color: #009999; }
+code .ch { color: #009999; }
+code .st { color: #183691; }
+code .co { color: #969896; }
+code .ot { color: #0086b3; }
+code .al { color: #a61717; }
+code .fu { color: #63a35c; }
+code .er { color: #a61717; background-color: #e3d2d2; }
+code .wa { color: #000000; }
+code .cn { color: #008080; }
+code .sc { color: #008080; }
+code .vs { color: #183691; }
+code .ss { color: #183691; }
+code .im { color: #000000; }
+code .va {color: #008080; }
+code .cf { color: #000000; }
+code .op { color: #000000; }
+code .bu { color: #000000; }
+code .ex { color: #000000; }
+code .pp { color: #999999; }
+code .at { color: #008080; }
+code .do { color: #969896; }
+code .an { color: #008080; }
+code .cv { color: #008080; }
+code .in { color: #008080; }
+</style>
+<style>
+body {
+box-sizing: border-box;
+min-width: 200px;
+max-width: 980px;
+margin: 0 auto;
+padding: 45px;
+padding-top: 0px;
+}
+</style>
+
+
+</head>
+
+<body>
+
+<h1 id="code-03-extraer-resultados">Code 03: extraer resultados</h1>
+<p>dacarras Abril 18, 2024</p>
+<h1 id="cargar-datos">Cargar datos</h1>
+<h2 id="cargar-datos-desde-archivo">Cargar datos desde archivo</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#--------------------------------------------------------------------</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># load data</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">#--------------------------------------------------------------------</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">#------------------------------------------------</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># load main library</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co">#------------------------------------------------</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co">#------------------------------------------------</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co"># load data from file</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co">#------------------------------------------------</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>data_civ <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">&#39;data_civ.rds&#39;</span>) <span class="co"># pooled</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>data_exp <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">&#39;data_exp.rds&#39;</span>) <span class="co"># exploratory</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>data_con <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">&#39;data_con.rds&#39;</span>) <span class="co"># confirmatory</span></span></code></pre></div>
+<h1 id="descriptivos">Descriptivos</h1>
+<h2 id="items">Items</h2>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#--------------------------------------------------------------------</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># item</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co">#--------------------------------------------------------------------</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co">#------------------------------------------------</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co"># item info</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co">#------------------------------------------------</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>items_table <span class="ot">&lt;-</span> <span class="fu">read.table</span>(</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="at">text=</span><span class="st">&quot;</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="st">var_name  variable item_text</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="st">IS3G23A   n01      &#39;Voting in every national election&#39;</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="st">IS3G23B   n02      &#39;Joining a political party&#39;</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="st">IS3G23C   n03      &#39;Learning about the country history&#39;</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="st">IS3G23D   n04      &#39;Following political issues in the newspaper, on theradio, on TV or on the Internet&#39;</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="st">IS3G23E   n05      &#39;Showing respect for government representatives&#39;</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="st">IS3G23F   n06      &#39;Engaging in political discussions&#39;</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="st">IS3G23G   n07      &#39;Participating in peaceful protests against laws believed to be unjust&#39;</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="st">IS3G23H   n08      &#39;Participating in activities to benefit people in the &lt;local community&gt;&#39;</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="st">IS3G23I   n09      &#39;Taking part in activities promoting human rights&#39;</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a><span class="st">IS3G23J   n10      &#39;Taking part in activities to protect the environment&#39;</span></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a><span class="st">IS3G23K   n11      &#39;Working hard&#39;</span></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a><span class="st">IS3G23L   n12      &#39;Always obeying the law&#39;</span></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a><span class="st">IS3G22A   td1      &#39;[R] Political leaders give government jobs to their family members.&#39;</span></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a><span class="st">IS3G22B   td2      &#39;[R] One company or the government owns all newspapers in a country.&#39;</span></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a><span class="st">IS3G22C   td3      &#39;People are allowed to publicly criticize the government.&#39;</span></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a><span class="st">IS3G22D   td4      &#39;All adult citizens have the right to elect their political leaders.&#39;</span></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a><span class="st">IS3G22E   td5      &#39;People are able to protest if they think a law is unfair.&#39;</span></span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a><span class="st">IS3G22F   td6      &#39;[R] The police have the right to hold people suspected of threatening national security in jail without trial.&#39;</span></span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a><span class="st">IS3G22G   td7      &#39;Differences in income between poor and rich people are small.&#39;</span></span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a><span class="st">IS3G22H   td8      &#39;[R] The government influences decisions by courts of justice.&#39;</span></span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a><span class="st">IS3G22I   td9      &#39;All &lt;ethnic/racial&gt; groups in the country have the same rights.&#39;</span></span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;</span>,</span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a><span class="at">header=</span><span class="cn">TRUE</span>, <span class="at">stringsAsFactors =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a><span class="co"># display item table</span></span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(items_table)</span></code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th align="left">var_name</th>
+<th align="left">variable</th>
+<th align="left">item_text</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">IS3G23A</td>
+<td align="left">n01</td>
+<td align="left">Voting in every national election</td>
+</tr>
+<tr class="even">
+<td align="left">IS3G23B</td>
+<td align="left">n02</td>
+<td align="left">Joining a political party</td>
+</tr>
+<tr class="odd">
+<td align="left">IS3G23C</td>
+<td align="left">n03</td>
+<td align="left">Learning about the country history</td>
+</tr>
+<tr class="even">
+<td align="left">IS3G23D</td>
+<td align="left">n04</td>
+<td align="left">Following political issues in the newspaper, on
+theradio, on TV or on the Internet</td>
+</tr>
+<tr class="odd">
+<td align="left">IS3G23E</td>
+<td align="left">n05</td>
+<td align="left">Showing respect for government representatives</td>
+</tr>
+<tr class="even">
+<td align="left">IS3G23F</td>
+<td align="left">n06</td>
+<td align="left">Engaging in political discussions</td>
+</tr>
+<tr class="odd">
+<td align="left">IS3G23G</td>
+<td align="left">n07</td>
+<td align="left">Participating in peaceful protests against laws
+believed to be unjust</td>
+</tr>
+<tr class="even">
+<td align="left">IS3G23H</td>
+<td align="left">n08</td>
+<td align="left">Participating in activities to benefit people in the
+<local community></td>
+</tr>
+<tr class="odd">
+<td align="left">IS3G23I</td>
+<td align="left">n09</td>
+<td align="left">Taking part in activities promoting human rights</td>
+</tr>
+<tr class="even">
+<td align="left">IS3G23J</td>
+<td align="left">n10</td>
+<td align="left">Taking part in activities to protect the
+environment</td>
+</tr>
+<tr class="odd">
+<td align="left">IS3G23K</td>
+<td align="left">n11</td>
+<td align="left">Working hard</td>
+</tr>
+<tr class="even">
+<td align="left">IS3G23L</td>
+<td align="left">n12</td>
+<td align="left">Always obeying the law</td>
+</tr>
+<tr class="odd">
+<td align="left">IS3G22A</td>
+<td align="left">td1</td>
+<td align="left">[R] Political leaders give government jobs to their
+family members.</td>
+</tr>
+<tr class="even">
+<td align="left">IS3G22B</td>
+<td align="left">td2</td>
+<td align="left">[R] One company or the government owns all newspapers
+in a country.</td>
+</tr>
+<tr class="odd">
+<td align="left">IS3G22C</td>
+<td align="left">td3</td>
+<td align="left">People are allowed to publicly criticize the
+government.</td>
+</tr>
+<tr class="even">
+<td align="left">IS3G22D</td>
+<td align="left">td4</td>
+<td align="left">All adult citizens have the right to elect their
+political leaders.</td>
+</tr>
+<tr class="odd">
+<td align="left">IS3G22E</td>
+<td align="left">td5</td>
+<td align="left">People are able to protest if they think a law is
+unfair.</td>
+</tr>
+<tr class="even">
+<td align="left">IS3G22F</td>
+<td align="left">td6</td>
+<td align="left">[R] The police have the right to hold people suspected
+of threatening national security in jail without trial.</td>
+</tr>
+<tr class="odd">
+<td align="left">IS3G22G</td>
+<td align="left">td7</td>
+<td align="left">Differences in income between poor and rich people are
+small.</td>
+</tr>
+<tr class="even">
+<td align="left">IS3G22H</td>
+<td align="left">td8</td>
+<td align="left">[R] The government influences decisions by courts of
+justice.</td>
+</tr>
+<tr class="odd">
+<td align="left">IS3G22I</td>
+<td align="left">td9</td>
+<td align="left">All &lt;ethnic/racial&gt; groups in the country have
+the same rights.</td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">#------------------------------------------------</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># item selection</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co">#------------------------------------------------</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>items_selected <span class="ot">&lt;-</span> <span class="fu">read.table</span>(</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="at">text=</span><span class="st">&quot;</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="st">var_name  variable item_text</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="st">IS3G22D   td4      &#39;All adult citizens have the right to elect their political leaders.&#39;</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="st">IS3G22I   td9      &#39;All &lt;ethnic/racial&gt; groups in the country have the same rights.&#39;</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="st">IS3G22E   td5      &#39;People are able to protest if they think a law is unfair.&#39;</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="st">IS3G22H   td8      &#39;[R] The government influences decisions by courts of justice.&#39;</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="st">IS3G22B   td2      &#39;[R] One company or the government owns all newspapers in a country.&#39;</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;</span>,</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="at">header=</span><span class="cn">TRUE</span>, <span class="at">stringsAsFactors =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="co"># display item table</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(items_selected)</span></code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th align="left">var_name</th>
+<th align="left">variable</th>
+<th align="left">item_text</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">IS3G22D</td>
+<td align="left">td4</td>
+<td align="left">All adult citizens have the right to elect their
+political leaders.</td>
+</tr>
+<tr class="even">
+<td align="left">IS3G22I</td>
+<td align="left">td9</td>
+<td align="left">All &lt;ethnic/racial&gt; groups in the country have
+the same rights.</td>
+</tr>
+<tr class="odd">
+<td align="left">IS3G22E</td>
+<td align="left">td5</td>
+<td align="left">People are able to protest if they think a law is
+unfair.</td>
+</tr>
+<tr class="even">
+<td align="left">IS3G22H</td>
+<td align="left">td8</td>
+<td align="left">[R] The government influences decisions by courts of
+justice.</td>
+</tr>
+<tr class="odd">
+<td align="left">IS3G22B</td>
+<td align="left">td2</td>
+<td align="left">[R] One company or the government owns all newspapers
+in a country.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="proporciones-de-respuesta">Proporciones de respuesta</h2>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">#--------------------------------------------------------------------</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co"># load data</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co">#--------------------------------------------------------------------</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co">#------------------------------------------------</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co"># pooled sample</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co">#------------------------------------------------</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>data_civ <span class="sc">%&gt;%</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>dplyr<span class="sc">::</span><span class="fu">select</span>(td4, td9, td5, td8, td2) <span class="sc">%&gt;%</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>ilsa<span class="sc">::</span><span class="fu">wide_resp</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(., <span class="at">digits =</span> <span class="dv">2</span>)</span></code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th align="left">variable</th>
+<th align="right">00</th>
+<th align="right">01</th>
+<th align="right">NA</th>
+<th align="left">hist</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">td4</td>
+<td align="right">0.18</td>
+<td align="right">0.80</td>
+<td align="right">0.03</td>
+<td align="left">▂▁▁▁▁▁▁▇</td>
+</tr>
+<tr class="even">
+<td align="left">td9</td>
+<td align="right">0.37</td>
+<td align="right">0.60</td>
+<td align="right">0.03</td>
+<td align="left">▅▁▁▁▁▁▁▇</td>
+</tr>
+<tr class="odd">
+<td align="left">td5</td>
+<td align="right">0.34</td>
+<td align="right">0.64</td>
+<td align="right">0.03</td>
+<td align="left">▅▁▁▁▁▁▁▇</td>
+</tr>
+<tr class="even">
+<td align="left">td8</td>
+<td align="right">0.71</td>
+<td align="right">0.26</td>
+<td align="right">0.03</td>
+<td align="left">▇▁▁▁▁▁▁▃</td>
+</tr>
+<tr class="odd">
+<td align="left">td2</td>
+<td align="right">0.52</td>
+<td align="right">0.45</td>
+<td align="right">0.03</td>
+<td align="left">▇▁▁▁▁▁▁▇</td>
+</tr>
+</tbody>
+</table>
+<h1 id="mixture-modelling">Mixture Modelling</h1>
+<h2 id="ajustar-modelo-de-3-clases">Ajustar modelo de 3 clases</h2>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">#------------------------------------------------------------------------------</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co"># lca modelling</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co">#------------------------------------------------------------------------------</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co"># -----------------------------------------------</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="co"># class model</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="co"># -----------------------------------------------</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>class_model <span class="ot">&lt;-</span> glca<span class="sc">::</span><span class="fu">item</span>(td4, td9, td5, td8, td2) <span class="sc">~</span> <span class="dv">1</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="co"># -----------------------------------------------</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="co"># number of classes</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="co"># -----------------------------------------------</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>ac3 <span class="ot">&lt;-</span> glca<span class="sc">::</span><span class="fu">glca</span>(class_model, <span class="at">data =</span> data_civ, <span class="at">nclass =</span> <span class="dv">3</span>, <span class="at">seed =</span> <span class="dv">1</span>, <span class="at">verbose =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a><span class="co"># -----------------------------------------------</span></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a><span class="co"># model fit</span></span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a><span class="co"># -----------------------------------------------</span></span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>fit_ac3 <span class="ot">&lt;-</span> glca<span class="sc">::</span><span class="fu">gofglca</span>(ac3, <span class="at">nboot =</span> <span class="dv">100</span>, <span class="at">test =</span> <span class="st">&#39;boot&#39;</span>, <span class="at">seed =</span> <span class="dv">20221122</span>)</span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a><span class="co"># -----------------------------------------------</span></span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a><span class="co"># display table</span></span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a><span class="co"># -----------------------------------------------</span></span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>fit_ac3<span class="sc">$</span>gtable <span class="sc">%&gt;%</span></span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>tibble<span class="sc">::</span><span class="fu">as_tibble</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(., <span class="at">digits =</span> <span class="dv">2</span>)</span></code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th align="right">logLik</th>
+<th align="right">AIC</th>
+<th align="right">CAIC</th>
+<th align="right">BIC</th>
+<th align="right">entropy</th>
+<th align="right">Res.Df</th>
+<th align="right">Gsq</th>
+<th align="right">Boot p-value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">-3883</td>
+<td align="right">7800</td>
+<td align="right">7906</td>
+<td align="right">7889</td>
+<td align="right">0.61</td>
+<td align="right">14</td>
+<td align="right">61</td>
+<td align="right">0</td>
+</tr>
+</tbody>
+</table>
+<h2 id="resultados">Resultados</h2>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">#------------------------------------------------------------------------------</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co"># results</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co">#------------------------------------------------------------------------------</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co"># -----------------------------------------------</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="co"># display results</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="co"># -----------------------------------------------</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(glca)</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(ac3)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## glca::glca(formula = class_model, data = data_civ, nclass = 3, 
+##     seed = 1, verbose = FALSE)
+## 
+## Manifest items : td4 td9 td5 td8 td2 
+## 
+## Categories for manifest items :
+##     Y = 1 Y = 2
+## td4     0     1
+## td9     0     1
+## td5     0     1
+## td8     0     1
+## td2     0     1
+## 
+## Model : Latent class analysis 
+## 
+## Number of latent classes : 3 
+## Number of observations : 1377 
+## Number of parameters : 17 
+## 
+## log-likelihood : -3883 
+##      G-squared : 61 
+##            AIC : 7800 
+##            BIC : 7889 
+## 
+## Marginal prevalences for latent classes :
+## Class 1 Class 2 Class 3 
+##    0.46    0.36    0.19 
+## 
+## Class prevalences by group :
+##     Class 1 Class 2 Class 3
+## ALL    0.46    0.36    0.19
+## 
+## Item-response probabilities (Y = 1) :
+##           td4  td9  td5  td8  td2
+## Class 1 0.078 0.33 0.26 1.00 0.68
+## Class 2 0.047 0.18 0.17 0.38 0.24
+## Class 3 0.700 0.90 0.90 0.76 0.76
+## 
+## Item-response probabilities (Y = 2) :
+##          td4  td9  td5  td8  td2
+## Class 1 0.92 0.67 0.74 0.00 0.32
+## Class 2 0.95 0.82 0.83 0.62 0.76
+## Class 3 0.30 0.10 0.10 0.24 0.24</code></pre>
+<h1 id="extrayendo-los-resultados-como-tablas">Extrayendo los resultados
+como tablas</h1>
+<h2 id="prevalencia-de-las-clases">Prevalencia de las clases</h2>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">#------------------------------------------------------------------------------</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co"># lca realizations</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co">#------------------------------------------------------------------------------</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="co"># -----------------------------------------------</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="co"># display class prevalence</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="co"># -----------------------------------------------</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>ac3 <span class="sc">%&gt;%</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>purrr<span class="sc">::</span><span class="fu">pluck</span>(<span class="st">&#39;param&#39;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>purrr<span class="sc">::</span><span class="fu">pluck</span>(<span class="st">&#39;gamma&#39;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(., <span class="at">digits =</span> <span class="dv">2</span>)</span></code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th align="left"></th>
+<th align="right">Class 1</th>
+<th align="right">Class 2</th>
+<th align="right">Class 3</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">ALL</td>
+<td align="right">0.46</td>
+<td align="right">0.36</td>
+<td align="right">0.19</td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># -----------------------------------------------</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co"># as steps</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co"># -----------------------------------------------</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>lca_model <span class="ot">&lt;-</span> ac3</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>class_est <span class="ot">&lt;-</span> lca_model<span class="sc">$</span>param<span class="sc">$</span>gamma</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>class_err <span class="ot">&lt;-</span> lca_model<span class="sc">$</span>std.err<span class="sc">$</span>gamma</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>n_class   <span class="ot">&lt;-</span> lca_model<span class="sc">$</span>model<span class="sc">$</span>C</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>class_names  <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&#39;class_&#39;</span>,<span class="fu">seq</span>(<span class="dv">1</span><span class="sc">:</span>n_class))</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>class_prev <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>  <span class="at">class =</span> class_names,</span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>  <span class="at">e     =</span> <span class="fu">as.numeric</span>(class_est),</span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>  <span class="at">se    =</span> <span class="fu">as.numeric</span>(class_err)</span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>class_prev <span class="sc">%&gt;%</span></span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(., <span class="at">digits =</span> <span class="dv">2</span>)</span></code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th align="left">class</th>
+<th align="right">e</th>
+<th align="right">se</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">class_1</td>
+<td align="right">0.46</td>
+<td align="right">0.06</td>
+</tr>
+<tr class="even">
+<td align="left">class_2</td>
+<td align="right">0.36</td>
+<td align="right">0.04</td>
+</tr>
+<tr class="odd">
+<td align="left">class_3</td>
+<td align="right">0.19</td>
+<td align="right">0.05</td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># -----------------------------------------------</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="co"># as a function</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="co"># -----------------------------------------------</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>get_lca_prev <span class="ot">&lt;-</span> <span class="cf">function</span>(lca){</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>lca_model     <span class="ot">&lt;-</span> lca <span class="co"># object with the fitted data</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>class_est <span class="ot">&lt;-</span> lca_model<span class="sc">$</span>param<span class="sc">$</span>gamma</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>class_err <span class="ot">&lt;-</span> lca_model<span class="sc">$</span>std.err<span class="sc">$</span>gamma</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>n_class   <span class="ot">&lt;-</span> lca_model<span class="sc">$</span>model<span class="sc">$</span>C</span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>class_names  <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&#39;class_&#39;</span>,<span class="fu">seq</span>(<span class="dv">1</span><span class="sc">:</span>n_class))</span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>class_prev <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>  <span class="at">class =</span> class_names,</span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>  <span class="at">e     =</span> <span class="fu">as.numeric</span>(class_est),</span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a>  <span class="at">se    =</span> <span class="fu">as.numeric</span>(class_err)</span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a><span class="fu">return</span>(class_prev)</span>
+<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-22"><a href="#cb10-22" aria-hidden="true" tabindex="-1"></a><span class="co"># -----------------------------------------------</span></span>
+<span id="cb10-23"><a href="#cb10-23" aria-hidden="true" tabindex="-1"></a><span class="co"># display result</span></span>
+<span id="cb10-24"><a href="#cb10-24" aria-hidden="true" tabindex="-1"></a><span class="co"># -----------------------------------------------</span></span>
+<span id="cb10-25"><a href="#cb10-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-26"><a href="#cb10-26" aria-hidden="true" tabindex="-1"></a><span class="fu">get_lca_prev</span>(ac3) <span class="sc">%&gt;%</span></span>
+<span id="cb10-27"><a href="#cb10-27" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(., <span class="at">digits =</span> <span class="dv">2</span>)</span></code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th align="left">class</th>
+<th align="right">e</th>
+<th align="right">se</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">class_1</td>
+<td align="right">0.46</td>
+<td align="right">0.06</td>
+</tr>
+<tr class="even">
+<td align="left">class_2</td>
+<td align="right">0.36</td>
+<td align="right">0.04</td>
+</tr>
+<tr class="odd">
+<td align="left">class_3</td>
+<td align="right">0.19</td>
+<td align="right">0.05</td>
+</tr>
+</tbody>
+</table>
+<h2 id="respuestas-esperadas">Respuestas esperadas</h2>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co">#------------------------------------------------------------------------------</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="co"># lca item estimates</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="co">#------------------------------------------------------------------------------</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="co"># -----------------------------------------------</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="co"># as steps</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="co"># -----------------------------------------------</span></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>lca_model <span class="ot">&lt;-</span> ac3</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>n_class   <span class="ot">&lt;-</span> lca_model<span class="sc">$</span>model<span class="sc">$</span>C</span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>item      <span class="ot">&lt;-</span> <span class="st">&#39;td4&#39;</span></span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>lca_model <span class="sc">%&gt;%</span></span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>purrr<span class="sc">::</span><span class="fu">pluck</span>(<span class="st">&#39;param&#39;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>purrr<span class="sc">::</span><span class="fu">pluck</span>(<span class="st">&#39;rho&#39;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>purrr<span class="sc">::</span><span class="fu">pluck</span>(<span class="st">&#39;ALL&#39;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a>purrr<span class="sc">::</span><span class="fu">pluck</span>(item) <span class="sc">%&gt;%</span></span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a>tibble<span class="sc">::</span><span class="fu">as_tibble</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a><span class="fu">rename</span>(<span class="at">cat_1 =</span> <span class="dv">1</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a><span class="fu">rename</span>(<span class="at">cat_2 =</span> <span class="dv">2</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a><span class="fu">mutate</span>(<span class="at">class =</span> <span class="fu">seq</span>(<span class="dv">1</span><span class="sc">:</span>n_class)) <span class="sc">%&gt;%</span></span>
+<span id="cb11-22"><a href="#cb11-22" aria-hidden="true" tabindex="-1"></a><span class="fu">mutate</span>(<span class="at">item =</span> item) <span class="sc">%&gt;%</span></span>
+<span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a>dplyr<span class="sc">::</span><span class="fu">select</span>(class, item, cat_1, cat_2) <span class="sc">%&gt;%</span></span>
+<span id="cb11-24"><a href="#cb11-24" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(., <span class="at">digits =</span> <span class="dv">2</span>)</span></code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th align="right">class</th>
+<th align="left">item</th>
+<th align="right">cat_1</th>
+<th align="right">cat_2</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">1</td>
+<td align="left">td4</td>
+<td align="right">0.08</td>
+<td align="right">0.92</td>
+</tr>
+<tr class="even">
+<td align="right">2</td>
+<td align="left">td4</td>
+<td align="right">0.05</td>
+<td align="right">0.95</td>
+</tr>
+<tr class="odd">
+<td align="right">3</td>
+<td align="left">td4</td>
+<td align="right">0.70</td>
+<td align="right">0.30</td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># -----------------------------------------------</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="co"># as a function</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="co"># -----------------------------------------------</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>get_item_resp <span class="ot">&lt;-</span> <span class="cf">function</span>(lca, item){</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>lca_model <span class="ot">&lt;-</span> lca</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>n_class   <span class="ot">&lt;-</span> lca_model<span class="sc">$</span>model<span class="sc">$</span>C</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>lca_model <span class="sc">%&gt;%</span></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>purrr<span class="sc">::</span><span class="fu">pluck</span>(<span class="st">&#39;param&#39;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>purrr<span class="sc">::</span><span class="fu">pluck</span>(<span class="st">&#39;rho&#39;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>purrr<span class="sc">::</span><span class="fu">pluck</span>(<span class="st">&#39;ALL&#39;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>purrr<span class="sc">::</span><span class="fu">pluck</span>(item) <span class="sc">%&gt;%</span></span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>tibble<span class="sc">::</span><span class="fu">as_tibble</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a><span class="fu">rename</span>(<span class="at">cat_1 =</span> <span class="dv">1</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a><span class="fu">rename</span>(<span class="at">cat_2 =</span> <span class="dv">2</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a><span class="fu">mutate</span>(<span class="at">class =</span> <span class="fu">seq</span>(<span class="dv">1</span><span class="sc">:</span>n_class)) <span class="sc">%&gt;%</span></span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a><span class="fu">mutate</span>(<span class="at">item =</span> item) <span class="sc">%&gt;%</span></span>
+<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a>dplyr<span class="sc">::</span><span class="fu">select</span>(class, item, cat_1, cat_2)</span>
+<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a><span class="co"># -----------------------------------------------</span></span>
+<span id="cb12-24"><a href="#cb12-24" aria-hidden="true" tabindex="-1"></a><span class="co"># display result</span></span>
+<span id="cb12-25"><a href="#cb12-25" aria-hidden="true" tabindex="-1"></a><span class="co"># -----------------------------------------------</span></span>
+<span id="cb12-26"><a href="#cb12-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-27"><a href="#cb12-27" aria-hidden="true" tabindex="-1"></a><span class="fu">get_item_resp</span>(ac3, <span class="at">item =</span> <span class="st">&#39;td4&#39;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb12-28"><a href="#cb12-28" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(., <span class="at">digits =</span> <span class="dv">2</span>)</span></code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th align="right">class</th>
+<th align="left">item</th>
+<th align="right">cat_1</th>
+<th align="right">cat_2</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">1</td>
+<td align="left">td4</td>
+<td align="right">0.08</td>
+<td align="right">0.92</td>
+</tr>
+<tr class="even">
+<td align="right">2</td>
+<td align="left">td4</td>
+<td align="right">0.05</td>
+<td align="right">0.95</td>
+</tr>
+<tr class="odd">
+<td align="right">3</td>
+<td align="left">td4</td>
+<td align="right">0.70</td>
+<td align="right">0.30</td>
+</tr>
+</tbody>
+</table>
+<h2 id="extraer-realizaciones">Extraer realizaciones</h2>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co">#------------------------------------------------------------------------------</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="co"># lca realizations</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="co">#------------------------------------------------------------------------------</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="co"># -----------------------------------------------</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="co"># as steps</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="co"># -----------------------------------------------</span></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>lca_model     <span class="ot">&lt;-</span> ac3 <span class="co"># object with the fitted data</span></span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>lca_posterior <span class="ot">&lt;-</span> tibble<span class="sc">::</span><span class="fu">as_tibble</span>(lca_model<span class="sc">$</span>posterior<span class="sc">$</span>ALL)</span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>data_index    <span class="ot">&lt;-</span> <span class="fu">rownames</span>(<span class="fu">as.data.frame</span>(lca_model<span class="sc">$</span>datalist<span class="sc">$</span>y))</span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>lca_data      <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>                 <span class="at">index =</span> <span class="fu">as.numeric</span>(data_index), </span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a>                 <span class="at">lca =</span>  <span class="fu">factor</span>(<span class="fu">apply</span>(lca_posterior, <span class="dv">1</span>, which.max))</span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a>                 )</span>
+<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a>original_names <span class="ot">&lt;-</span> <span class="fu">names</span>(lca_posterior)</span>
+<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a>number_of_var  <span class="ot">&lt;-</span> <span class="fu">length</span>(original_names) </span>
+<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a>prob_names     <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&#39;c&#39;</span>,<span class="fu">seq</span>(<span class="dv">1</span><span class="sc">:</span>number_of_var),<span class="st">&#39;_prob&#39;</span>)</span>
+<span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-22"><a href="#cb13-22" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(lca_posterior) <span class="ot">&lt;-</span> prob_names</span>
+<span id="cb13-23"><a href="#cb13-23" aria-hidden="true" tabindex="-1"></a>dplyr<span class="sc">::</span><span class="fu">glimpse</span>(lca_posterior)</span></code></pre></div>
+<pre><code>## Rows: 1,377
+## Columns: 3
+## $ c1_prob &lt;dbl&gt; 5.0e-01, 2.5e-05, 9.0e-01, 9.0e-01, 9.0e-01, 5.0e-01, 8.7e-01,…
+## $ c2_prob &lt;dbl&gt; 0.49673, 0.99967, 0.05821, 0.05821, 0.05821, 0.13311, 0.12444,…
+## $ c3_prob &lt;dbl&gt; 0.0008, 0.0003, 0.0391, 0.0391, 0.0391, 0.3663, 0.0021, 0.5132…</code></pre>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>lca_prob      <span class="ot">&lt;-</span> dplyr<span class="sc">::</span><span class="fu">bind_cols</span>(</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>                 <span class="fu">data.frame</span>(<span class="at">index =</span> <span class="fu">as.numeric</span>(data_index)),</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>                 lca_posterior</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>                 )</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>data_with_lca <span class="ot">&lt;-</span> lca_prob <span class="sc">%&gt;%</span></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>                 <span class="fu">mutate</span>(<span class="at">cprob=</span><span class="fu">pmax</span>(<span class="sc">!!!</span>rlang<span class="sc">::</span><span class="fu">syms</span>(prob_names))) <span class="sc">%&gt;%</span></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>                 dplyr<span class="sc">::</span><span class="fu">left_join</span>(., lca_data, <span class="at">by =</span> <span class="st">&#39;index&#39;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>                 <span class="fu">mutate</span>(<span class="at">lca =</span> <span class="fu">as.factor</span>(lca)) <span class="sc">%&gt;%</span></span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>                 dplyr<span class="sc">::</span><span class="fu">glimpse</span>()</span></code></pre></div>
+<pre><code>## Rows: 1,377
+## Columns: 6
+## $ index   &lt;dbl&gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18,…
+## $ c1_prob &lt;dbl&gt; 5.0e-01, 2.5e-05, 9.0e-01, 9.0e-01, 9.0e-01, 5.0e-01, 8.7e-01,…
+## $ c2_prob &lt;dbl&gt; 0.49673, 0.99967, 0.05821, 0.05821, 0.05821, 0.13311, 0.12444,…
+## $ c3_prob &lt;dbl&gt; 0.0008, 0.0003, 0.0391, 0.0391, 0.0391, 0.3663, 0.0021, 0.5132…
+## $ cprob   &lt;dbl&gt; 0.50, 1.00, 0.90, 0.90, 0.90, 0.50, 0.87, 0.51, 0.86, 0.87, 0.…
+## $ lca     &lt;fct&gt; 1, 2, 1, 1, 1, 1, 1, 3, 3, 1, 1, 1, 3, 1, 3, 1, 3, 2, 1, 2, 3,…</code></pre>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># display 20 cases</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>data_with_lca[<span class="dv">1</span><span class="sc">:</span><span class="dv">20</span>,] <span class="sc">%&gt;%</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(., <span class="at">digits =</span> <span class="dv">2</span>)</span></code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th align="right">index</th>
+<th align="right">c1_prob</th>
+<th align="right">c2_prob</th>
+<th align="right">c3_prob</th>
+<th align="right">cprob</th>
+<th align="left">lca</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">1</td>
+<td align="right">0.50</td>
+<td align="right">0.50</td>
+<td align="right">0.00</td>
+<td align="right">0.50</td>
+<td align="left">1</td>
+</tr>
+<tr class="even">
+<td align="right">2</td>
+<td align="right">0.00</td>
+<td align="right">1.00</td>
+<td align="right">0.00</td>
+<td align="right">1.00</td>
+<td align="left">2</td>
+</tr>
+<tr class="odd">
+<td align="right">3</td>
+<td align="right">0.90</td>
+<td align="right">0.06</td>
+<td align="right">0.04</td>
+<td align="right">0.90</td>
+<td align="left">1</td>
+</tr>
+<tr class="even">
+<td align="right">4</td>
+<td align="right">0.90</td>
+<td align="right">0.06</td>
+<td align="right">0.04</td>
+<td align="right">0.90</td>
+<td align="left">1</td>
+</tr>
+<tr class="odd">
+<td align="right">5</td>
+<td align="right">0.90</td>
+<td align="right">0.06</td>
+<td align="right">0.04</td>
+<td align="right">0.90</td>
+<td align="left">1</td>
+</tr>
+<tr class="even">
+<td align="right">6</td>
+<td align="right">0.50</td>
+<td align="right">0.13</td>
+<td align="right">0.37</td>
+<td align="right">0.50</td>
+<td align="left">1</td>
+</tr>
+<tr class="odd">
+<td align="right">7</td>
+<td align="right">0.87</td>
+<td align="right">0.12</td>
+<td align="right">0.00</td>
+<td align="right">0.87</td>
+<td align="left">1</td>
+</tr>
+<tr class="even">
+<td align="right">8</td>
+<td align="right">0.47</td>
+<td align="right">0.02</td>
+<td align="right">0.51</td>
+<td align="right">0.51</td>
+<td align="left">3</td>
+</tr>
+<tr class="odd">
+<td align="right">9</td>
+<td align="right">0.00</td>
+<td align="right">0.14</td>
+<td align="right">0.86</td>
+<td align="right">0.86</td>
+<td align="left">3</td>
+</tr>
+<tr class="even">
+<td align="right">10</td>
+<td align="right">0.87</td>
+<td align="right">0.07</td>
+<td align="right">0.05</td>
+<td align="right">0.87</td>
+<td align="left">1</td>
+</tr>
+<tr class="odd">
+<td align="right">11</td>
+<td align="right">0.87</td>
+<td align="right">0.12</td>
+<td align="right">0.00</td>
+<td align="right">0.87</td>
+<td align="left">1</td>
+</tr>
+<tr class="even">
+<td align="right">12</td>
+<td align="right">0.90</td>
+<td align="right">0.06</td>
+<td align="right">0.04</td>
+<td align="right">0.90</td>
+<td align="left">1</td>
+</tr>
+<tr class="odd">
+<td align="right">13</td>
+<td align="right">0.03</td>
+<td align="right">0.00</td>
+<td align="right">0.97</td>
+<td align="right">0.97</td>
+<td align="left">3</td>
+</tr>
+<tr class="even">
+<td align="right">14</td>
+<td align="right">0.87</td>
+<td align="right">0.07</td>
+<td align="right">0.06</td>
+<td align="right">0.87</td>
+<td align="left">1</td>
+</tr>
+<tr class="odd">
+<td align="right">15</td>
+<td align="right">0.03</td>
+<td align="right">0.00</td>
+<td align="right">0.97</td>
+<td align="right">0.97</td>
+<td align="left">3</td>
+</tr>
+<tr class="even">
+<td align="right">16</td>
+<td align="right">0.87</td>
+<td align="right">0.12</td>
+<td align="right">0.00</td>
+<td align="right">0.87</td>
+<td align="left">1</td>
+</tr>
+<tr class="odd">
+<td align="right">17</td>
+<td align="right">0.00</td>
+<td align="right">0.14</td>
+<td align="right">0.86</td>
+<td align="right">0.86</td>
+<td align="left">3</td>
+</tr>
+<tr class="even">
+<td align="right">18</td>
+<td align="right">0.00</td>
+<td align="right">0.99</td>
+<td align="right">0.01</td>
+<td align="right">0.99</td>
+<td align="left">2</td>
+</tr>
+<tr class="odd">
+<td align="right">19</td>
+<td align="right">0.50</td>
+<td align="right">0.50</td>
+<td align="right">0.00</td>
+<td align="right">0.50</td>
+<td align="left">1</td>
+</tr>
+<tr class="even">
+<td align="right">20</td>
+<td align="right">0.00</td>
+<td align="right">1.00</td>
+<td align="right">0.00</td>
+<td align="right">1.00</td>
+<td align="left">2</td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># -----------------------------------------------</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="co"># as a function</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="co"># -----------------------------------------------</span></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>get_lca_realizations <span class="ot">&lt;-</span> <span class="cf">function</span>(lca){</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>lca_model     <span class="ot">&lt;-</span> lca <span class="co"># object with the fitted data</span></span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>lca_posterior <span class="ot">&lt;-</span> tibble<span class="sc">::</span><span class="fu">as_tibble</span>(lca_model<span class="sc">$</span>posterior<span class="sc">$</span>ALL)</span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>data_index    <span class="ot">&lt;-</span> <span class="fu">rownames</span>(<span class="fu">as.data.frame</span>(lca_model<span class="sc">$</span>datalist<span class="sc">$</span>y))</span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>lca_data      <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>                 <span class="at">index =</span> <span class="fu">as.numeric</span>(data_index), </span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a>                 <span class="at">lca =</span>  <span class="fu">factor</span>(<span class="fu">apply</span>(lca_posterior, <span class="dv">1</span>, which.max))</span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a>                 )</span>
+<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a>original_names <span class="ot">&lt;-</span> <span class="fu">names</span>(lca_posterior)</span>
+<span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a>number_of_var  <span class="ot">&lt;-</span> <span class="fu">length</span>(original_names) </span>
+<span id="cb18-17"><a href="#cb18-17" aria-hidden="true" tabindex="-1"></a>prob_names     <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&#39;c&#39;</span>,<span class="fu">seq</span>(<span class="dv">1</span><span class="sc">:</span>number_of_var),<span class="st">&#39;_prob&#39;</span>)</span>
+<span id="cb18-18"><a href="#cb18-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-19"><a href="#cb18-19" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(lca_posterior) <span class="ot">&lt;-</span> prob_names</span>
+<span id="cb18-20"><a href="#cb18-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-21"><a href="#cb18-21" aria-hidden="true" tabindex="-1"></a>lca_prob      <span class="ot">&lt;-</span> dplyr<span class="sc">::</span><span class="fu">bind_cols</span>(</span>
+<span id="cb18-22"><a href="#cb18-22" aria-hidden="true" tabindex="-1"></a>                 <span class="fu">data.frame</span>(<span class="at">index =</span> <span class="fu">as.numeric</span>(data_index)),</span>
+<span id="cb18-23"><a href="#cb18-23" aria-hidden="true" tabindex="-1"></a>                 lca_posterior</span>
+<span id="cb18-24"><a href="#cb18-24" aria-hidden="true" tabindex="-1"></a>                 )</span>
+<span id="cb18-25"><a href="#cb18-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-26"><a href="#cb18-26" aria-hidden="true" tabindex="-1"></a>data_with_lca <span class="ot">&lt;-</span> lca_prob <span class="sc">%&gt;%</span></span>
+<span id="cb18-27"><a href="#cb18-27" aria-hidden="true" tabindex="-1"></a>                 <span class="fu">mutate</span>(<span class="at">cprob=</span><span class="fu">pmax</span>(<span class="sc">!!!</span>rlang<span class="sc">::</span><span class="fu">syms</span>(prob_names))) <span class="sc">%&gt;%</span></span>
+<span id="cb18-28"><a href="#cb18-28" aria-hidden="true" tabindex="-1"></a>                 dplyr<span class="sc">::</span><span class="fu">left_join</span>(., lca_data, <span class="at">by =</span> <span class="st">&#39;index&#39;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb18-29"><a href="#cb18-29" aria-hidden="true" tabindex="-1"></a>                 <span class="fu">mutate</span>(<span class="at">lca =</span> <span class="fu">as.factor</span>(lca)) <span class="sc">%&gt;%</span></span>
+<span id="cb18-30"><a href="#cb18-30" aria-hidden="true" tabindex="-1"></a>                 <span class="fu">mutate</span>(<span class="at">class_error =</span> <span class="dv">1</span><span class="sc">-</span>cprob) <span class="sc">%&gt;%</span></span>
+<span id="cb18-31"><a href="#cb18-31" aria-hidden="true" tabindex="-1"></a>                 tibble<span class="sc">::</span><span class="fu">as_tibble</span>()</span>
+<span id="cb18-32"><a href="#cb18-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-33"><a href="#cb18-33" aria-hidden="true" tabindex="-1"></a><span class="fu">return</span>(data_with_lca)</span>
+<span id="cb18-34"><a href="#cb18-34" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb18-35"><a href="#cb18-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-36"><a href="#cb18-36" aria-hidden="true" tabindex="-1"></a><span class="co"># -----------------------------------------------</span></span>
+<span id="cb18-37"><a href="#cb18-37" aria-hidden="true" tabindex="-1"></a><span class="co"># display result</span></span>
+<span id="cb18-38"><a href="#cb18-38" aria-hidden="true" tabindex="-1"></a><span class="co"># -----------------------------------------------</span></span>
+<span id="cb18-39"><a href="#cb18-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-40"><a href="#cb18-40" aria-hidden="true" tabindex="-1"></a><span class="co"># display 20 cases</span></span>
+<span id="cb18-41"><a href="#cb18-41" aria-hidden="true" tabindex="-1"></a><span class="fu">get_lca_realizations</span>(ac3)[<span class="dv">1</span><span class="sc">:</span><span class="dv">20</span>,] <span class="sc">%&gt;%</span></span>
+<span id="cb18-42"><a href="#cb18-42" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(., <span class="at">digits =</span> <span class="dv">2</span>)</span></code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th align="right">index</th>
+<th align="right">c1_prob</th>
+<th align="right">c2_prob</th>
+<th align="right">c3_prob</th>
+<th align="right">cprob</th>
+<th align="left">lca</th>
+<th align="right">class_error</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">1</td>
+<td align="right">0.50</td>
+<td align="right">0.50</td>
+<td align="right">0.00</td>
+<td align="right">0.50</td>
+<td align="left">1</td>
+<td align="right">0.50</td>
+</tr>
+<tr class="even">
+<td align="right">2</td>
+<td align="right">0.00</td>
+<td align="right">1.00</td>
+<td align="right">0.00</td>
+<td align="right">1.00</td>
+<td align="left">2</td>
+<td align="right">0.00</td>
+</tr>
+<tr class="odd">
+<td align="right">3</td>
+<td align="right">0.90</td>
+<td align="right">0.06</td>
+<td align="right">0.04</td>
+<td align="right">0.90</td>
+<td align="left">1</td>
+<td align="right">0.10</td>
+</tr>
+<tr class="even">
+<td align="right">4</td>
+<td align="right">0.90</td>
+<td align="right">0.06</td>
+<td align="right">0.04</td>
+<td align="right">0.90</td>
+<td align="left">1</td>
+<td align="right">0.10</td>
+</tr>
+<tr class="odd">
+<td align="right">5</td>
+<td align="right">0.90</td>
+<td align="right">0.06</td>
+<td align="right">0.04</td>
+<td align="right">0.90</td>
+<td align="left">1</td>
+<td align="right">0.10</td>
+</tr>
+<tr class="even">
+<td align="right">6</td>
+<td align="right">0.50</td>
+<td align="right">0.13</td>
+<td align="right">0.37</td>
+<td align="right">0.50</td>
+<td align="left">1</td>
+<td align="right">0.50</td>
+</tr>
+<tr class="odd">
+<td align="right">7</td>
+<td align="right">0.87</td>
+<td align="right">0.12</td>
+<td align="right">0.00</td>
+<td align="right">0.87</td>
+<td align="left">1</td>
+<td align="right">0.13</td>
+</tr>
+<tr class="even">
+<td align="right">8</td>
+<td align="right">0.47</td>
+<td align="right">0.02</td>
+<td align="right">0.51</td>
+<td align="right">0.51</td>
+<td align="left">3</td>
+<td align="right">0.49</td>
+</tr>
+<tr class="odd">
+<td align="right">9</td>
+<td align="right">0.00</td>
+<td align="right">0.14</td>
+<td align="right">0.86</td>
+<td align="right">0.86</td>
+<td align="left">3</td>
+<td align="right">0.14</td>
+</tr>
+<tr class="even">
+<td align="right">10</td>
+<td align="right">0.87</td>
+<td align="right">0.07</td>
+<td align="right">0.05</td>
+<td align="right">0.87</td>
+<td align="left">1</td>
+<td align="right">0.13</td>
+</tr>
+<tr class="odd">
+<td align="right">11</td>
+<td align="right">0.87</td>
+<td align="right">0.12</td>
+<td align="right">0.00</td>
+<td align="right">0.87</td>
+<td align="left">1</td>
+<td align="right">0.13</td>
+</tr>
+<tr class="even">
+<td align="right">12</td>
+<td align="right">0.90</td>
+<td align="right">0.06</td>
+<td align="right">0.04</td>
+<td align="right">0.90</td>
+<td align="left">1</td>
+<td align="right">0.10</td>
+</tr>
+<tr class="odd">
+<td align="right">13</td>
+<td align="right">0.03</td>
+<td align="right">0.00</td>
+<td align="right">0.97</td>
+<td align="right">0.97</td>
+<td align="left">3</td>
+<td align="right">0.03</td>
+</tr>
+<tr class="even">
+<td align="right">14</td>
+<td align="right">0.87</td>
+<td align="right">0.07</td>
+<td align="right">0.06</td>
+<td align="right">0.87</td>
+<td align="left">1</td>
+<td align="right">0.13</td>
+</tr>
+<tr class="odd">
+<td align="right">15</td>
+<td align="right">0.03</td>
+<td align="right">0.00</td>
+<td align="right">0.97</td>
+<td align="right">0.97</td>
+<td align="left">3</td>
+<td align="right">0.03</td>
+</tr>
+<tr class="even">
+<td align="right">16</td>
+<td align="right">0.87</td>
+<td align="right">0.12</td>
+<td align="right">0.00</td>
+<td align="right">0.87</td>
+<td align="left">1</td>
+<td align="right">0.13</td>
+</tr>
+<tr class="odd">
+<td align="right">17</td>
+<td align="right">0.00</td>
+<td align="right">0.14</td>
+<td align="right">0.86</td>
+<td align="right">0.86</td>
+<td align="left">3</td>
+<td align="right">0.14</td>
+</tr>
+<tr class="even">
+<td align="right">18</td>
+<td align="right">0.00</td>
+<td align="right">0.99</td>
+<td align="right">0.01</td>
+<td align="right">0.99</td>
+<td align="left">2</td>
+<td align="right">0.01</td>
+</tr>
+<tr class="odd">
+<td align="right">19</td>
+<td align="right">0.50</td>
+<td align="right">0.50</td>
+<td align="right">0.00</td>
+<td align="right">0.50</td>
+<td align="left">1</td>
+<td align="right">0.50</td>
+</tr>
+<tr class="even">
+<td align="right">20</td>
+<td align="right">0.00</td>
+<td align="right">1.00</td>
+<td align="right">0.00</td>
+<td align="right">1.00</td>
+<td align="left">2</td>
+<td align="right">0.00</td>
+</tr>
+</tbody>
+</table>
+
+</body>
+</html>
