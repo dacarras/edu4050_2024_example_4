@@ -2,18 +2,15 @@
 output: github_document
 ---
 
-# CIAE LCA 2022
+# EDU40450 LCA 2024
 
 - Repositorio de los ejemplos de código empleados para ajustar modelos de clases latentes.
-- Material empleado para la clase "Modelos de clases latentes", realizada para el curso "Metodología Cuantitativa II", realizada como profesor invitado.
+- Material empleado para la clase "Modelos de clases latentes", realizada para el curso "Métodos de investigación cuantitativa en Estudios de Gran Escala"-
+
 
 ## Slides
 
-- Bajar [slides en PDF](https://www.dropbox.com/sh/6grd4snkxpjdwtn/AACvH3TboFXsDpeGaudP56fda?dl=1)
-
-## Código
-
-- Bajar [códigos de ejemplos](https://www.dropbox.com/sh/l24z9hnjr0ybkd9/AAD5GUxTTLZDXMEt-r9S8MvYa?dl=1)
+- Bajar [slides en PDF](https://www.dropbox.com/scl/fo/hf3q1v01bx3r4yjh2d345/ACirhx24-qAs4QefoF8Wvec?rlkey=0jxafrb4gbf1ecronipxjvi0w&dl=1)
 
 ## Instalación
 
